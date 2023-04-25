@@ -6,8 +6,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"rollup": "rollup -c --bundleConfigAsCjs",
-		"link-local": "yarn link && yarn link \"react\" && cd ../react-dom && yarn link",
-		"unlink-local": "yarn unlink && yarn unlink \"react\" && yarn unlink \"react-dom\""
+		"deploy": "yarn rollup && npm publish"
 	},
 	"repository": {
 		"type": "git",

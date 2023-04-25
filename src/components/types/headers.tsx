@@ -1,7 +1,12 @@
 
-type HeaderType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+type HeaderType = 'heading_1' | 'heading_2' | 'heading_3'
 
 export interface HeaderProps { 
-  headerBlock: any[],
+  headerBlock: {
+    rich_text: {
+      plain_text: string,
+    }
+    color: string
+  },
   type: HeaderType
 }

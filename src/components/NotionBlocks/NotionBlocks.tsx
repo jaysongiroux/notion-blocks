@@ -8,14 +8,11 @@ export interface NotionBlocksProps {
 const NotionBlocks = (props: NotionBlocksProps) => {
   
   const handleComponent = (block: any) => { 
-    return <div>hello world</div>
     switch (block?.type) {
-      case 'heading_1':
-        return <Headers headerBlock={block?.heading_1} type="h1"/>
-      case 'heading_2':
-        return <Headers headerBlock={block?.heading_2} type="h2"/>
       case 'heading_3':
-        return <Headers headerBlock={block?.heading_3} type="h3"/>
+      case 'heading_2':
+      case 'heading_1':
+        return <Headers headerBlock={block[block?.type]} type={block?.type} />
       default:
         return null
     }
