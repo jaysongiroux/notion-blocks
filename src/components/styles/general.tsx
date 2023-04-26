@@ -16,5 +16,6 @@ export const codeBlockGeneralStyles = {
   paddingRight: 20,
   borderRadius: 4,
   width: "100%",
-  marginTop: 2
+  marginTop: 2,
+  boxSizing: "border-box"
 }
