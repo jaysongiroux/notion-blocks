@@ -5,19 +5,96 @@ A React component package to be given the `blocks` from the notion API to render
 
 [LIVE DEMO](http://notion-blocks.jasongiroux.com)
 
+## Use
+```js
+import {NotionBlocks} from 'notion-blocks'
 
-## Setup
-create a .env file and include `CHROMATIC_PROJECT_TOKEN`
+export const example = () => {
+  const blocks = BLOCKS_FROM_NOTION_API;
+
+  return (
+    <NotionBlocks blocks={blocks}>
+  )
+}
 ```
+
+### API
+|  Prop  |  type  |  Description  |
+| ------ | ------ | ------------- |
+|blocks  |object  |list of blocks that can be acquired from Notion's API|
+
+
+## Supports
+- Headers
+  - Text Color
+  - Background Color
+  - Bold
+  - Italic
+  - Link
+  - Code
+  - Underline
+  - Strike Through
+- Paragraph
+  - Text Color
+  - Background Color
+  - Bold
+  - Italic
+  - Link
+  - Code
+  - Underline
+  - Strike Through
+- Code Block
+  - All Notion Supported Languages
+  - Syntax Highlighting
+  - Copy Button on Hover
+  - Language Label On Hover
+  - Stylized Captions
+    -  Text Color
+    - Background Color
+    - Bold
+    - Italic
+    - Link
+    - Code
+    - Underline
+    - Strike Through
+
+TODO:
+- Lists
+  - Bulleted
+  - Numbered
+  - TODO Lists
+  - Toggle
+- Headers
+  - Toggle Header
+- Toggle
+- Call Out
+- Quote
+- Images
+- Tables
+- Component Nesting (Ex. Toggle inside a toggle)
+- General Styling/Polishing
+- Storybook organization
+- Exporting all components
+- Additional Props to individually style components
+  - example: `codeStyles = {backgroundColor: "Black"}`
+
+
+## Local Setup + Contributing
+**This is a work in process** that is purposefully written to be easily integrated with Notion's API.
+
+### Setup
+Install dependencies
+```bash
 yarn
 ```
 
-## locally
-```
+### local StoryBook
+[Live Demo](http://notion-blocks.jasongiroux.com)
+```bash
 yarn storybook
 ```
 
-## Building
-```
+### Building
+```bash
 yarn rollup
 ```
