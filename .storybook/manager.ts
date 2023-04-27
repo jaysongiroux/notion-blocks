@@ -1,10 +1,10 @@
 // .storybook/manager.js
 
 import { addons } from '@storybook/manager-api';
-import { themes } from '@storybook/theming';
+import theme from './theme'
 
 addons.setConfig({
-  theme: themes.dark,
+  theme: theme,
   brandTitle: "Notion-Blocks",
-  brandImage: 'http://url/to/img.png](https://github.com/jaysongiroux/notion-blocks/tree/master/assets/notionBlocks.png',
+  brandImage: 'https://github.com/jaysongiroux/notion-blocks/blob/master/assets/notionBlocks.png?raw=true',
 });

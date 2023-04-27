@@ -1,7 +1,7 @@
 # Notion-Blocks
 <div align="center">
 
-  ![alt text]([http://url/to/img.png](https://github.com/jaysongiroux/notion-blocks/tree/master/assets/notionBlocks.png))
+  ![alt text](https://github.com/jaysongiroux/notion-blocks/blob/master/assets/notionBlocks.png?raw=true)
 
   [![semantic-release: React](https://img.shields.io/badge/semantic--release-react-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
   ![Main Workflow](https://github.com/jaysongiroux/notion-blocks/actions/workflows/main.yml/badge.svg)
