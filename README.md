@@ -1,6 +1,8 @@
 # Notion-Blocks
 <div align="center">
 
+  ![alt text]([http://url/to/img.png](https://github.com/jaysongiroux/notion-blocks/tree/master/assets/notionBlocks.png))
+
   [![semantic-release: React](https://img.shields.io/badge/semantic--release-react-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
   ![Main Workflow](https://github.com/jaysongiroux/notion-blocks/actions/workflows/main.yml/badge.svg)
   [![npm version](https://badge.fury.io/js/notion-blocks.svg)](https://badge.fury.io/js/notion-blocks)
