@@ -49,7 +49,7 @@ const Code = (props: CodeProps) => {
 				<div className="CodeContainer">
 					{hoverableToolbar}
 					<SyntaxHighlighter
-						customStyle={{ fontSize: "12px", paddingTop: 20, paddingBottom: 20 }}
+						customStyle={{ fontSize: "11px", paddingTop: 20, paddingBottom: 20 }}
 						language="javascript"
 						style={getCodeTheme(props.theme)}
 					>
