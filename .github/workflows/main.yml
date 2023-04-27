@@ -18,10 +18,13 @@ jobs:
         run: npm ci
       - name: Build package with Rollup
         run: npm run rollup
+      - name: Release
+        run: npx semantic-release
       - name: Publish to NPM
         run: npm publish --access public
         env:
           NPM_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
   
   chromatic-deployment:
     # Operating System
