@@ -72,9 +72,6 @@
 		"tinycolor2": "^1.6.0"
 	},
 	"_id": "notion-blocks@1.0.2",
-	"publishConfig": {
-		"access": "restricted"
-	},
 	"plugins": [
 		"@semantic-release/commit-analyzer",
 		"@semantic-release/release-notes-generator",
