@@ -1,0 +1,65 @@
+.CodeCaptionBox {
+	width: 100%;
+	font-size: 0.85em;
+	font-weight: 100;
+	border-radius: 2px;
+	transform: translateY(-0.5em);
+	filter: grayscale(0.8);
+}
+
+.CodeLanguageTag {
+	position: absolute;
+	font-family: sans-serif;
+	font-size: 0.75em;
+	padding: 0.3em 0.6em;
+	border-radius: 2px;
+	color: rgb(129, 129, 129);
+	font-weight: 400;
+	transform: translate(6px, 2px);
+	opacity: 0;
+	transition: .5s;
+}
+
+.CodeContainer {
+	position: relative;
+}
+
+.CodeContainer:hover .CodeLanguageTag {
+	opacity: 0.75;
+	transition: .5s;
+}
+
+.CodeCopyButtonContainer {
+	position: absolute;
+	right:8px;
+	top: 6px;
+}
+
+.CodeCopyButton {
+	font-family: sans-serif;
+	font-size: 0.75em;
+	color: rgb(78, 78, 78);
+	background-color: rgb(224, 224, 224);
+	border-radius: 2px;
+	outline: unset;
+	border: unset;
+	cursor: pointer;
+	border: 1px solid rgba(195, 195, 195, 0.8);
+	font-weight: 500;
+	opacity: 0;
+	padding: 4px;
+}
+
+.CodeCopyButton:active {
+	background-color: rgb(224, 224, 224);
+}
+
+.CodeContainer:hover .CodeCopyButton {
+	opacity: 0.65;
+	transition: .5s;
+}
+
+.CodeCopyButtonIcon {
+	height: 10px;
+	margin-right: 3px;
+}

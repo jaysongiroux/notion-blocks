@@ -29,6 +29,6 @@ export const paragraphTest: Story = {
 
 export const codeBlockTest: Story = {
   args: {
-    blocks: codeBlocks
+    blocks: codeBlocks,
   }
 }

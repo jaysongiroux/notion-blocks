@@ -1,20 +1,10 @@
+import { RichTextProps } from "./general"
 
 type HeaderType = 'heading_1' | 'heading_2' | 'heading_3'
 
 export interface HeaderProps { 
   headerBlock: {
-    rich_text: [{
-      plain_text: string,
-      annotations: {
-        color: string,
-        italic: boolean,
-        bold: boolean,
-        strikethrough: boolean,
-        underline: boolean,
-        code: boolean
-      },
-      href: string | null
-    }],
+    rich_text: [RichTextProps],
     color: string
   },
   type: HeaderType
