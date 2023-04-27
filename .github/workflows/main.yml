@@ -1,4 +1,4 @@
-name: Publish to NPM
+name: Build, Publish to NPM and Deploy to Chromatic
 on:
   push:
     branches:
@@ -28,6 +28,7 @@ jobs:
   chromatic-deployment:
     # Operating System
     runs-on: ubuntu-latest
+    needs: build-and-publish
     # Job steps
     steps:
       - uses: actions/checkout@v1
