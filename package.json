@@ -4,7 +4,6 @@
 	"private": false,
 	"description": "Notion blocks react component",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
 		"rollup": "rollup -c --bundleConfigAsCjs",
 		"deploy": "yarn rollup && npm publish",
 		"storybook": "storybook dev -p 6006",
@@ -70,10 +69,8 @@
 	],
 	"dependencies": {
 		"react-syntax-highlighter": "^15.5.0",
-		"sass": "^1.62.1",
 		"tinycolor2": "^1.6.0"
 	},
-	"readme": "ERROR: No README data found!",
 	"_id": "notion-blocks@1.0.2",
 	"publishConfig": {
 		"access": "restricted"
