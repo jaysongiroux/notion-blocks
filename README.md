@@ -1,4 +1,12 @@
 # Notion-Blocks
+<div align="center">
+
+  [![semantic-release: React](https://img.shields.io/badge/semantic--release-react-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+  ![Main Workflow](https://github.com/jaysongiroux/notion-blocks/actions/workflows/main.yml/badge.svg)
+  [![npm version](https://badge.fury.io/js/notion-blocks.svg)](https://badge.fury.io/js/notion-blocks)
+  [![Badge](https://202o2716cl9w.runkit.sh)](http://notion-blocks.jasongiroux.com)
+
+</div>
 A React component package to be given the `blocks` from the notion API to render in browser
 
 [NPM PACKAGE](https://www.npmjs.com/package/notion-blocks)
