@@ -18,6 +18,6 @@ jobs:
       - name: Build package with Rollup
         run: npm run rollup
       - name: Publish to NPM
-        run: npm publish --access public
+        run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
