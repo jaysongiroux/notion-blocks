@@ -14,16 +14,16 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/jaysongiroux/react-notion-blocks-package.git"
+		"url": "https://github.com/jaysongiroux/notion-blocks.git"
 	},
 	"author": {
 		"name": "Jason Giroux"
 	},
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/jaysongiroux/react-notion-blocks-package/issues"
+		"url": "https://github.com/jaysongiroux/notion-blocks/issues"
 	},
-	"homepage": "https://github.com/jaysongiroux/react-notion-blocks-package#readme",
+	"homepage": "https://github.com/jaysongiroux/notion-blocks#readme",
 	"devDependencies": {
 		"@babel/preset-env": "^7.21.4",
 		"@babel/preset-react": "^7.18.6",
