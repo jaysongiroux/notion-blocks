@@ -1,4 +1,4 @@
-import { AnnotationsProps, StylesProps } from "../types/general"
+import { AnnotationsProps, CombinedColor, StylesProps } from "../types/general"
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 const tinycolor = require("tinycolor2");

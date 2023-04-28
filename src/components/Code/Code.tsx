@@ -1,15 +1,18 @@
 import React from "react";
 import { CodeProps } from "../types/code";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { getCodeTheme, getStyles } from "../helpers/generalStyles";
+import { getCodeTheme } from "../helpers/generalStyles";
 import { CaptionProps, RichTextProps } from "../types/general";
+import {
+	constructCaptionFromBlocks,
+} from "../helpers/captions";
 import "./codeStyles.css";
 
 const Code = (props: CodeProps) => {
 	const richText: string = props?.codeBlock?.rich_text
 		.map((rt: RichTextProps) => rt?.plain_text)
 		.join();
-	const caption: [CaptionProps] = props?.codeBlock?.caption;
+	const caption: CaptionProps[] = props?.codeBlock?.caption;
 
 	const hoverableToolbar = (
 		<>
@@ -43,13 +46,18 @@ const Code = (props: CodeProps) => {
 			</div>
 		</>
 	);
+
 	const constructContent = (rt: any) => {
 		return (
 			<>
 				<div className="CodeContainer">
 					{hoverableToolbar}
 					<SyntaxHighlighter
-						customStyle={{ fontSize: "11px", paddingTop: 20, paddingBottom: 20 }}
+						customStyle={{
+							fontSize: "11px",
+							paddingTop: 20,
+							paddingBottom: 20,
+						}}
 						language="javascript"
 						style={getCodeTheme(props.theme)}
 					>
@@ -60,32 +68,10 @@ const Code = (props: CodeProps) => {
 		);
 	};
 
-	const constructCaption = (co: CaptionProps) => {
-		const styles = getStyles(
-			co?.annotations,
-			co?.annotations?.color,
-			!!co?.href,
-			true
-		);
-		const plainText = co?.plain_text;
-		if (co?.href)
-			return (
-				<a style={styles} href={co?.href}>
-					{plainText}
-				</a>
-			);
-
-		return <span style={styles}>{plainText}</span>;
-	};
-
 	return (
 		<>
 			<div>{constructContent(richText)}</div>
-			<div className={"CodeCaptionBox"}>
-				{caption?.map((co: CaptionProps, key: number) => (
-					<span key={key}>{constructCaption(co)}</span>
-				))}
-			</div>
+			{constructCaptionFromBlocks(caption)}
 		</>
 	);
 };

@@ -8,8 +8,8 @@ enum Theme {
 export interface CodeProps {
   codeBlock: {
     language: string,
-    caption: [CaptionProps],
-    rich_text:[RichTextProps] 
+    caption: CaptionProps[],
+    rich_text:RichTextProps[] 
   },
   theme: Theme
 }

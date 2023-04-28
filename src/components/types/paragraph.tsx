@@ -1,8 +1,8 @@
-import { RichTextProps } from "./general"
+import { CombinedColor, RichTextProps } from "./general"
 
 export interface ParagraphProps { 
   paragraphBlock: {
-    rich_text: [RichTextProps],
-    color: string
+    rich_text: RichTextProps[],
+    color: CombinedColor
   },
 }

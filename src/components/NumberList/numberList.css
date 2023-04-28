@@ -1,0 +1,11 @@
+.NumberListPreTag {
+	line-break: auto;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+	display: list-item;
+	margin-left: 18px;
+  font-family: sans-serif;
+}

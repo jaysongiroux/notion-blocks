@@ -1,0 +1,27 @@
+.CalloutContainer {
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+	background-color: rgba(120, 120, 120, 0.1);
+	border-radius: 4px;
+	align-items: center;
+
+	padding-top: 18px;
+	padding-bottom: 18px;
+	padding-left: 42px;
+	padding-right: 12px;
+	position: relative;
+	line-break: auto;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+
+.CalloutEmoji {
+	font-size: 1.25rem;
+	position: absolute;
+	left: 12px;
+	top: 14px;
+}

@@ -67,26 +67,38 @@ export const example = () => {
     - Code
     - Underline
     - Strike Through
+- Lists
+  - Numbered
+  - Bulleted
+- Images
+- Call Out
+- Quote
+- Divider
+
 
 TODO:
 - Lists
-  - Bulleted
-  - Numbered
   - TODO Lists
   - Toggle
 - Headers
   - Toggle Header
 - Toggle
-- Call Out
-- Quote
-- Images
+- Columns
+  - 2 columns
+  - 3 columns
 - Tables
+- Mentions
 - Component Nesting (Ex. Toggle inside a toggle)
 - General Styling/Polishing
 - Storybook organization
 - Exporting all components
 - Additional Props to individually style components
   - example: `codeStyles = {backgroundColor: "Black"}`
+- Equations
+- Comments
+- Audio
+- Code (Mermaid Diagram)
+- Web Book Mark
 
 
 ## Local Setup + Contributing

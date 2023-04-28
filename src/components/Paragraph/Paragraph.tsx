@@ -2,9 +2,10 @@ import React from 'react'
 import { ParagraphProps } from '../types/paragraph'
 import { getStyles } from '../helpers/generalStyles'
 import { RichTextProps } from '../types/general'
+import { constructTextFromBlocks } from '../helpers/text'
 
 const Paragraph = (props: ParagraphProps) => {
-  const richText: Array<any> = props?.paragraphBlock?.rich_text
+  const richText = props?.paragraphBlock?.rich_text
 
   const constructContent = (rt: RichTextProps) => {
     const contentLink = rt?.href
@@ -18,12 +19,8 @@ const Paragraph = (props: ParagraphProps) => {
     return <span style={styles}>{content}</span>
   }
 
-  return (
-    <>
-      {richText?.map((rt: any, index: number) => <span key={index}>{constructContent(rt)}</span>)}
-      {richText?.length === 0 && <div style={{ minHeight: "1em" }} />}
-    </>
-  )
+  return constructTextFromBlocks(richText)
+
 }
 
 export default Paragraph

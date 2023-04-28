@@ -1,11 +1,11 @@
-import { RichTextProps } from "./general"
+import { CombinedColor, RichTextProps } from "./general"
 
 type HeaderType = 'heading_1' | 'heading_2' | 'heading_3'
 
 export interface HeaderProps { 
   headerBlock: {
-    rich_text: [RichTextProps],
-    color: string
+    rich_text: RichTextProps[],
+    color: CombinedColor
   },
   type: HeaderType
 }

@@ -1,0 +1,7 @@
+.CaptionCaptionBox {
+  width: 100%;
+  font-size: 0.85em;
+  font-weight: 100;
+  border-radius: 2px;
+  filter: grayscale(0.8);
+}
