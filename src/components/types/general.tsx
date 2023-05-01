@@ -8,7 +8,7 @@ export interface AnnotationsProps {
 }
 
 export interface StylesProps {
-	fontWeight?: string;
+	fontWeight?: string | number;
 	fontStyle?: string;
 	textDecoration?: string;
 	color?: string;
@@ -18,8 +18,25 @@ export interface StylesProps {
 	padding?: number;
 	fontFamily?: string;
 	backdropFilter?: string;
-	paddingLeft?: string;
-	paddingRight?: string;
+	paddingLeft?: string | number;
+	paddingRight?: string | number;
+	paddingTop?: string | number;
+	paddingBottom?: string | number;
+}
+
+export interface MentionProps {
+	type: string;
+	user: {
+		object: string;
+		id: string;
+		name: string;
+		avatar_url: string;
+		type: string;
+		person: {};
+	};
+}
+export interface MentionOverlayProps {
+	mention?: MentionProps;
 }
 
 export interface RichTextProps {
@@ -27,6 +44,8 @@ export interface RichTextProps {
 	href: string | null;
 	annotations: AnnotationsProps;
 	text: TextProps;
+	type?: string;
+	mention?: MentionProps;
 }
 
 export interface NumberedListBlock {
@@ -79,7 +98,7 @@ export enum Color {
 export enum CombinedColor {
 	Color,
 	BackgroundColor,
-	undefined
+	undefined,
 }
 
 export interface NotionBlocksProps {

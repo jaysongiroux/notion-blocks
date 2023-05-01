@@ -1,0 +1,32 @@
+.ToDoListCheckLeft {
+  background-color: white;
+  height: 0.3em;
+  width: 0.15em;
+  transform: rotate(-35deg) translate(-0.14em, 0.4em);
+  position: absolute;
+}
+
+.ToDoListCheckRight {
+  background-color: white;
+  height: 0.8em;
+  width: 0.15em;
+  transform: rotate(-125deg) translate(-0.4em, 0.33em);
+  position: absolute;
+}
+
+.ToDoListCheckCheckContainer {
+  height: 1em;
+  width: 1em;
+  color: white;
+}
+
+.ToDoListCheckContainer {
+  height: 1em;
+  width: 1em;
+}
+
+.TodoListOverallContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}

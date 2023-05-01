@@ -11,5 +11,6 @@ export interface CodeProps {
     caption: CaptionProps[],
     rich_text:RichTextProps[] 
   },
-  theme: Theme
+  theme: Theme;
+  index: number;
 }

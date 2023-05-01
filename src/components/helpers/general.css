@@ -1,0 +1,29 @@
+.NotionBlocksPreTagLineBreak {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	line-break: auto;
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+
+.NotionBlocksMentionTriggerContainer {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.NotionBlocksMentionOverlayAvatarImage {
+	border-radius: 50%;
+	box-shadow: 1px 1px 1px 1px rgba(20, 20, 20, 0.1);
+	height: 30px;
+}
+
+.NotionBlocksMentionTooltipContentContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}

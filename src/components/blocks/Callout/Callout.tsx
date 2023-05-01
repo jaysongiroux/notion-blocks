@@ -1,8 +1,8 @@
 import React from "react";
-import { CalloutProps } from "../types/callout";
-import { RichTextProps } from "../types/general";
+import { CalloutProps } from "../../types/callout";
+import { RichTextProps } from "../../types/general";
 import "./callout.css"
-import { constructTextFromBlocks } from "../helpers/text";
+import { constructTextFromBlocks } from "../../helpers/text";
 
 const Callout = (props: CalloutProps) => {
 	const calloutBlocks: RichTextProps[] = props?.calloutBlock?.rich_text;

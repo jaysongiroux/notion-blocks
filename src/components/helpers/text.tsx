@@ -1,37 +1,56 @@
 import React from "react";
-import { getStyles } from "../helpers/generalStyles";
-import { RichTextProps, StylesProps } from "../types/general";
+import { RichTextProps } from "../types/general";
+import Mention from "../blocks/Mention/Mention";
 
-export const constructTextFromBlocks = (textBlocks: RichTextProps[]) => {
+import "../helpers/general.css";
+import { constructText, handleColor } from "./utils";
+import { Equation, EquationOptions, defaultErrorHandler } from "react-equation";
+import { defaultVariables, defaultFunctions } from "equation-resolver";
+
+export const constructTextFromBlocks = (
+	textBlocks: RichTextProps[],
+	overrides = {},
+	colorOverride: string | null = null
+) => {
 	return (
-		<div className="TextBlockContainer">
+		<span className="TextBlockContainer">
 			{!!textBlocks?.length ? (
 				textBlocks?.map((text: RichTextProps, key: number) => {
-					return <span key={key}>{constructText(text)}</span>;
+					if (text?.type === "mention") {
+						return (
+							<Mention
+								key={key}
+								text={text}
+								overrides={overrides}
+								colorOverride={colorOverride}
+							/>
+						);
+					} else if (text?.type === "equation") {
+						return (
+							<span key={key}>
+								<EquationOptions
+									variables={defaultVariables}
+									functions={defaultFunctions}
+									errorHandler={defaultErrorHandler}
+								>
+									<Equation value={text?.plain_text} />
+								</EquationOptions>
+							</span>
+						);
+					}
+					return (
+						<span key={key}>
+							{constructText(
+								text,
+								overrides,
+								handleColor(text?.annotations?.color, colorOverride)
+							)}
+						</span>
+					);
 				})
 			) : (
-				<div style={{ minHeight: "1em" }} />
+				<span style={{ minHeight: "1em" }} />
 			)}
-		</div>
+		</span>
 	);
-};
-
-export const constructText = (co: RichTextProps) => {
-	const styles: StylesProps = getStyles(
-		co?.annotations,
-		co?.annotations?.color,
-		!!co?.href,
-		true
-	);
-
-	const plainText = co?.plain_text;
-
-	if (co?.href)
-		return (
-			<a style={styles} href={co?.href}>
-				{plainText}
-			</a>
-		);
-
-	return <span style={styles}>{plainText}</span>;
 };

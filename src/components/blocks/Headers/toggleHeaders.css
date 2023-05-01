@@ -1,0 +1,51 @@
+.ToggleHeadersArrowUp {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid black;
+}
+
+.ToggleHeaderTitleContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+	padding: 3px;
+	cursor: pointer;
+	position: relative;
+}
+
+.ToggleHeaderBackgroundButton {
+	/* margin-top: 1.25em; */
+	height: 100%;
+}
+
+.ToggleHeaderDrawerContainer {
+	margin-left: 24px;
+}
+
+.ToggleHeaderTriangleIconOpenIcon {
+	fill: gray;
+	transition: 0.25s;
+}
+
+.ToggleHeaderTitleContainer:hover .ToggleHeaderTriangleIconOpenIcon {
+	fill: rgb(82, 82, 82);
+	transition: 0.25s;
+}
+
+.ToggleHeaderTriangleIcon {
+	transform: rotate(90deg);
+	transition: 0.25s;
+	display: flex;
+	align-items: center;
+	height: auto;
+	width: auto;
+	justify-content: center;
+}
+
+.ToggleHeaderTriangleIconOpen {
+	transform: rotate(180deg);
+	transition: 0.25s;
+}

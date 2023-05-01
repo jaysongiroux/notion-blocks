@@ -1,7 +1,7 @@
 import React from "react";
-import { PictureProps } from "../types/picture";
-import { CaptionProps } from "../types/general";
-import { constructCaptionFromBlocks } from "../helpers/captions";
+import { PictureProps } from "../../types/picture";
+import { CaptionProps } from "../../types/general";
+import { constructCaptionFromBlocks } from "../../helpers/captions";
 
 const Picture = (props: PictureProps) => {
   const resolveImageURL = () => {

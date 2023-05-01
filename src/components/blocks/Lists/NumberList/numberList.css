@@ -9,3 +9,11 @@
 	margin-left: 18px;
   font-family: sans-serif;
 }
+
+.NumberListOLContainer {
+	margin-block-start: unset;
+	margin-block-end: unset;
+	margin-inline-start: unset;
+	margin-inline-end: unset;
+	padding-inline-start: unset;
+}

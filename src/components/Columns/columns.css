@@ -1,0 +1,4 @@
+.NotionBlocksColumnsContainer {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,11 +1,10 @@
 import React from "react";
-import { CodeProps } from "../types/code";
+import { CodeProps } from "../../types/code";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { getCodeTheme } from "../helpers/generalStyles";
-import { CaptionProps, RichTextProps } from "../types/general";
-import {
-	constructCaptionFromBlocks,
-} from "../helpers/captions";
+import { getCodeTheme } from "../../helpers/generalStyles";
+import { CaptionProps, RichTextProps } from "../../types/general";
+import { constructCaptionFromBlocks } from "../../helpers/captions";
+
 import "./codeStyles.css";
 
 const Code = (props: CodeProps) => {
@@ -46,6 +45,7 @@ const Code = (props: CodeProps) => {
 			</div>
 		</>
 	);
+
 
 	const constructContent = (rt: any) => {
 		return (
