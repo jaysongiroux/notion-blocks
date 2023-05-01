@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: "18.x"
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
       - name: Build package with Rollup
-        run: npm run rollup
+        run: yarn rollup
       - name: Release
         run: npx semantic-release
         env:
@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --frozen-lockfile
         env:
           NPM_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
         # 👇 Adds Chromatic as a step in the workflow
