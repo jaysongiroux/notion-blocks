@@ -104,7 +104,7 @@ Due to Notion's API limitations, Toggle Item's content is not provided by queryi
 ```js
 const { Client } = require("@notionhq/client");
 const notion = new Client({
-	auth: process.env.NOTION_KEY,
+  auth: process.env.NOTION_KEY,
 });
 
 await notion.blocks.children.list({ block_id: postID });
@@ -114,7 +114,7 @@ If you would like to include the toggle's content, query the individual parent b
 
 ```js
 const CHILDREN_OF_TOGGLE_BLOCK = await notion.blocks.children.list({
-	block_id: TOGGLE_BLOCK_ID,
+  block_id: TOGGLE_BLOCK_ID,
 });
 
 console.log(CHILDREN_OF_TOGGLE_BLOCK);
@@ -223,7 +223,7 @@ Note: Column Width is not supported. Each Width will be equal.
 ```js
 const { Client } = require("@notionhq/client");
 const notion = new Client({
-	auth: process.env.NOTION_KEY,
+  auth: process.env.NOTION_KEY,
 });
 
 await notion.blocks.children.list({ block_id: postID });
@@ -233,7 +233,7 @@ If you would like to include the column's content, query the individual parent b
 
 ```js
 const CHILDREN_OF_COLUMN_CONTENT = await notion.blocks.children.list({
-	block_id: COLUMN_BLOCK_ID,
+  block_id: COLUMN_BLOCK_ID,
 });
 
 console.log(CHILDREN_OF_COLUMN_CONTENT);
@@ -299,66 +299,66 @@ Once you have queried the column and have a list of the children within the colu
 
 ```json
 {
-	"object": "block",
-	"id": "abc123",
-	"has_children": true,
-	"archived": false,
-	"type": "column_list",
-	"column_list": {},
-	"children": [
-		{
-			"object": "block",
-			"type": "column_list",
-			"column_list": {
-				"children": [
-					{
-						"object": "block",
-						"type": "column",
-						"column": {
-							"children": [
-								{
-									"object": "block",
-									"type": "paragraph",
-									"paragraph": {
-										"text": [
-											{
-												"type": "text",
-												"text": {
-													"content": "some text here"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					},
-					{
-						"object": "block",
-						"type": "column",
-						"column": {
-							"children": [
-								{
-									"object": "block",
-									"type": "paragraph",
-									"paragraph": {
-										"text": [
-											{
-												"type": "text",
-												"text": {
-													"content": "some text here"
-												}
-											}
-										]
-									}
-								}
-							]
-						}
-					}
-				]
-			}
-		}
-	]
+  "object": "block",
+  "id": "abc123",
+  "has_children": true,
+  "archived": false,
+  "type": "column_list",
+  "column_list": {},
+  "children": [
+    {
+      "object": "block",
+      "type": "column_list",
+      "column_list": {
+        "children": [
+          {
+            "object": "block",
+            "type": "column",
+            "column": {
+              "children": [
+                {
+                  "object": "block",
+                  "type": "paragraph",
+                  "paragraph": {
+                    "text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "some text here"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "object": "block",
+            "type": "column",
+            "column": {
+              "children": [
+                {
+                  "object": "block",
+                  "type": "paragraph",
+                  "paragraph": {
+                    "text": [
+                      {
+                        "type": "text",
+                        "text": {
+                          "content": "some text here"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
