@@ -14,6 +14,7 @@ import {
 	toggleListBlocks,
 	twoColumnBlocks,
 	threeColumnBlocks,
+	kitchenSinkBlocks,
 } from "./assets/blocks";
 import { NotionBlocks } from "../components";
 
@@ -26,6 +27,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+
+export const kitchenSink: Story = {
+	args: {
+		blocks: kitchenSinkBlocks
+	}
+}
 export const headerBlock: Story = {
 	args: {
 		blocks: headerBlocks,

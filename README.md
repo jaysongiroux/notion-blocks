@@ -91,6 +91,10 @@ export const example = () => {
 TODO:
 - Tables
 - General Styling/Polishing
+  - header text sizing needs to be adjusted (h3 too small)
+  - paragraph line-height needs to be increased, margin-top/bottom should be increased as well
+  - links should have a hover effect and color should be a nicer looking blue
+  - inline code color should be an easier to read color
 - Storybook organization
 - Additional Props to individually style components
   - example: `codeStyles = {backgroundColor: "Black"}`
