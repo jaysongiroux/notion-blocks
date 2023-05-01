@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![alt text](https://github.com/jaysongiroux/notion-blocks/blob/master/assets/notionBlocks-bg.png?raw=true)
+![alt text](https://github.com/jaysongiroux/notion-blocks/blob/master/assets/notionBlocks-white-bg.png?raw=true)
 
 [![semantic-release: React](https://img.shields.io/badge/semantic--release-react-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 ![Main Workflow](https://github.com/jaysongiroux/notion-blocks/actions/workflows/main.yml/badge.svg)
