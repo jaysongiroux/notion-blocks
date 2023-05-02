@@ -1,0 +1,4 @@
+.notionBlocksEntry {
+  display: flex;
+  flex-direction: column;
+}

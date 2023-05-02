@@ -23,18 +23,27 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 							open && "ToggleHeaderTriangleIconOpen"
 						}`}
 					>
-						<polygon className="ToggleHeaderTriangleIconOpenIcon" points="7 1, 1 12, 12 12" fill="#000" />
+						<polygon
+							className="ToggleHeaderTriangleIconOpenIcon"
+							points="7 1, 1 12, 12 12"
+							fill="#000"
+						/>
 					</svg>
 				</div>
 				<div className="ToggleHeaderContainer">
 					{constructHeaderTags(
 						props?.type,
-						props?.toggleHeaderBlock?.rich_text
+						props?.toggleHeaderBlock?.rich_text,
+						props.toggleHeaderStyles
 					)}
 				</div>
 			</div>
 			<div className="ToggleHeaderDrawerContainer">
-				<Drawer open={open} drawerContents={props?.children} />
+				<Drawer
+					open={open}
+					drawerContents={props?.children}
+					parentProps={props}
+				/>
 			</div>
 		</>
 	);
@@ -43,9 +52,17 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 const Drawer = (props: DrawerProps) => {
 	const open = props?.open;
 
+	const constructProps = () => {
+		const propsWithoutBlocks = Object.assign({}, props?.parentProps);
+		delete propsWithoutBlocks?.blocks;
+		delete propsWithoutBlocks?.children;
+		delete propsWithoutBlocks?.toggleHeaderBlock;
+		delete propsWithoutBlocks?.type;
+		return propsWithoutBlocks
+	};
 	return (
 		<AnimateHeight duration={500} height={open ? "auto" : 0}>
-			{props?.drawerContents && <NotionBlocks blocks={props?.drawerContents} />}
+			{props?.drawerContents && <NotionBlocks blocks={props?.drawerContents} {...constructProps()} />}
 		</AnimateHeight>
 	);
 };

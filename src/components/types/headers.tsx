@@ -9,6 +9,7 @@ export interface HeaderProps {
 		is_toggleable: boolean | undefined;
 	};
 	type: HeaderType;
+	headerStyles?: React.CSSProperties;
 }
 
 export interface ToggleHeaderProps {
@@ -19,6 +20,7 @@ export interface ToggleHeaderProps {
 	};
 	type: HeaderType;
 	children: [any];
+	toggleHeaderStyles?: React.CSSProperties;
 }
 
 export interface HeaderStylesProps {
@@ -30,4 +32,5 @@ export interface HeaderStylesProps {
 export interface DrawerProps {
 	open: boolean;
 	drawerContents: any[];
+	parentProps: any;
 }

@@ -6,4 +6,5 @@ export interface QuoteProps {
     rich_text: RichTextProps[];
     color: CombinedColor;
   },
+  quoteStyles?: React.CSSProperties;
 }

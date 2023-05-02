@@ -7,7 +7,7 @@ import { QuoteProps } from "../../types/quote";
 const Quote = (props: QuoteProps) => {
   const quoteBlocks: RichTextProps[]= props?.quoteBlock?.rich_text
   return (
-    <pre className="QuoteContainer">
+    <pre className="QuoteContainer" style={props.quoteStyles}>
       {constructTextFromBlocks(quoteBlocks)}
     </pre>
   )

@@ -4,18 +4,24 @@ import NotionBlocks from "../NotionBlocks/NotionBlocks";
 import "./columns.css";
 
 const Columns = (props: ColumnsProps) => {
-  const columns = props?.columnBlock;
-  const numberOfColumns = columns?.length;
-  const columnWidth = 100 / numberOfColumns;
+	const columns = props?.columnBlock;
+	const numberOfColumns = columns?.length;
+	const columnWidth = 100 / numberOfColumns;
 
+	const constructProps = (blocks: any[]) => {
+		return {
+			...props,
+			blocks,
+		};
+	};
 	return (
-    <div className="NotionBlocksColumnsContainer">
-      {columns?.map((column: any, key: number) => {
-        return (
-          <div key={key} style={{width: `${columnWidth}%`}}>
-            <NotionBlocks blocks={column?.children} />
-          </div>
-        )
+		<div className="NotionBlocksColumnsContainer" style={props?.columnStyles}>
+			{columns?.map((column: any, key: number) => {
+				return (
+					<div key={key} style={{ width: `${columnWidth}%` }}>
+						<NotionBlocks {...constructProps(column?.children)} />
+					</div>
+				);
 			})}
 		</div>
 	);

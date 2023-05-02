@@ -55,21 +55,21 @@ export const getStyles = (
 		styles.paddingRight = 3;
 		styles.borderRadius = 1;
 		styles.width = "fit-content";
-		styles.color = "#ff7070";
+		styles.color = "rgb(255 15 15)";
 		styles.fontFamily = "monospace";
 		styles.fontWeight = 100;
 	}
 
 	if (link && !annotations?.code) {
 		if (styles?.color === undefined || color === "default") {
-			styles.color = "blue";
+			styles.color = "#3271a8";
 		}
 	}
 
 	return styles;
 };
 
-export const getCodeTheme = (theme: string) => {
+export const getCodeTheme = (theme: string|undefined) => {
 	switch (theme) {
 		case "dark":
 			return oneDark;

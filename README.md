@@ -32,9 +32,22 @@ export const example = () => {
 
 ### API
 
-| Prop   | type   | Description                                           |
-| ------ | ------ | ----------------------------------------------------- |
-| blocks | object | list of blocks that can be acquired from Notion's API |
+| Prop               | type    | Description                                                                                              |
+| ------------------ | ------- | -------------------------------------------------------------------------------------------------------- |
+| blocks             | object  | list of blocks that can be acquired from Notion's API                                                    |
+| codeTheme          | string  | `light` or `dark`                                                                                        |
+| containerStyle     | object  | Object to style container where blocks are rendered                                                      |
+| codeOverlay        | boolean | To Show overlay in code block that allows users to copy code, and see the language within the code block |
+| headerStyles       | object  | Style overrides for headers, These overrides do not include toggle headers                               |
+| toggleHeaderStyles | object  | Style overrides for toggle headers. These styles do not include the content within the headers           |
+| toggleStyles       | object  | Style overrides for toggle lists. These styles do not include the content within the headers             |
+| codeStyles         | object  | styles placed onto the code block container.                                                             |
+| pictureStyles      | object  | styles for pictures                                                                                      |
+| calloutStyles      | object  | styles for callout container                                                                             |
+| quoteStyles        | object  | styles for quote container                                                                               |
+| listStyles         | object  | styles for individual block container                                                                    |
+| columnStyles       | object  | styles for column container                                                                              |
+| bookmarkStyles     | object  | styles for bookmark container                                                                            |
 
 ## Supports
 
@@ -87,19 +100,12 @@ export const example = () => {
   - 2 columns
   - 3 columns
 - Equations
+  - Note: Not all formats are supported yet
+    - Example: `\sqrt[3]{27}` is not supported
+    - Example: `dS >= 0` Some Comparison operators are not supported yet. 
 
 TODO:
 - Tables
-- General Styling/Polishing
-  - header text sizing needs to be adjusted (h3 too small)
-  - paragraph line-height needs to be increased, margin-top/bottom should be increased as well
-  - links should have a hover effect and color should be a nicer looking blue
-  - inline code color should be an easier to read color
-- Storybook organization
-- Additional Props to individually style components
-  - example: `codeStyles = {backgroundColor: "Black"}`
-- Comments
-- Web Book Mark
 
 # Toggles
 Due to Notion's API limitations, Toggle Item's content is not provided by querying a page's blocks.
@@ -108,7 +114,7 @@ Due to Notion's API limitations, Toggle Item's content is not provided by queryi
 ```js
 const { Client } = require("@notionhq/client");
 const notion = new Client({
-  auth: process.env.NOTION_KEY,
+	auth: process.env.NOTION_KEY,
 });
 
 await notion.blocks.children.list({ block_id: postID });
@@ -118,7 +124,7 @@ If you would like to include the toggle's content, query the individual parent b
 
 ```js
 const CHILDREN_OF_TOGGLE_BLOCK = await notion.blocks.children.list({
-  block_id: TOGGLE_BLOCK_ID,
+	block_id: TOGGLE_BLOCK_ID,
 });
 
 console.log(CHILDREN_OF_TOGGLE_BLOCK);
@@ -227,7 +233,7 @@ Note: Column Width is not supported. Each Width will be equal.
 ```js
 const { Client } = require("@notionhq/client");
 const notion = new Client({
-  auth: process.env.NOTION_KEY,
+	auth: process.env.NOTION_KEY,
 });
 
 await notion.blocks.children.list({ block_id: postID });
@@ -237,7 +243,7 @@ If you would like to include the column's content, query the individual parent b
 
 ```js
 const CHILDREN_OF_COLUMN_CONTENT = await notion.blocks.children.list({
-  block_id: COLUMN_BLOCK_ID,
+	block_id: COLUMN_BLOCK_ID,
 });
 
 console.log(CHILDREN_OF_COLUMN_CONTENT);
@@ -303,66 +309,66 @@ Once you have queried the column and have a list of the children within the colu
 
 ```json
 {
-  "object": "block",
-  "id": "abc123",
-  "has_children": true,
-  "archived": false,
-  "type": "column_list",
-  "column_list": {},
-  "children": [
-    {
-      "object": "block",
-      "type": "column_list",
-      "column_list": {
-        "children": [
-          {
-            "object": "block",
-            "type": "column",
-            "column": {
-              "children": [
-                {
-                  "object": "block",
-                  "type": "paragraph",
-                  "paragraph": {
-                    "text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "some text here"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "object": "block",
-            "type": "column",
-            "column": {
-              "children": [
-                {
-                  "object": "block",
-                  "type": "paragraph",
-                  "paragraph": {
-                    "text": [
-                      {
-                        "type": "text",
-                        "text": {
-                          "content": "some text here"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    }
-  ]
+	"object": "block",
+	"id": "abc123",
+	"has_children": true,
+	"archived": false,
+	"type": "column_list",
+	"column_list": {},
+	"children": [
+		{
+			"object": "block",
+			"type": "column_list",
+			"column_list": {
+				"children": [
+					{
+						"object": "block",
+						"type": "column",
+						"column": {
+							"children": [
+								{
+									"object": "block",
+									"type": "paragraph",
+									"paragraph": {
+										"text": [
+											{
+												"type": "text",
+												"text": {
+													"content": "some text here"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					},
+					{
+						"object": "block",
+						"type": "column",
+						"column": {
+							"children": [
+								{
+									"object": "block",
+									"type": "paragraph",
+									"paragraph": {
+										"text": [
+											{
+												"type": "text",
+												"text": {
+													"content": "some text here"
+												}
+											}
+										]
+									}
+								}
+							]
+						}
+					}
+				]
+			}
+		}
+	]
 }
 ```
 

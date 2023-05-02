@@ -1,6 +1,6 @@
 import { RichTextProps, CaptionProps} from "./general"
 
-enum Theme {
+export enum ThemeEnum {
   Light = 'light',
   Dark = 'dark'
 }
@@ -11,6 +11,7 @@ export interface CodeProps {
     caption: CaptionProps[],
     rich_text:RichTextProps[] 
   },
-  theme: Theme;
-  index: number;
+  theme?: ThemeEnum;
+  codeOverlay?: boolean;
+  codeStyles?: React.CSSProperties;
 }

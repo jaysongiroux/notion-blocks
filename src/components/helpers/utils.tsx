@@ -1,7 +1,6 @@
 import React from "react";
 import {
 	GeneralBlockProps,
-	NotionBlocksProps,
 	RichTextProps,
 	StylesProps,
 } from "../types/general";

@@ -19,7 +19,7 @@ const ToDoList = (props: toDoListProps) => {
 		: {};
 
 	return (
-		<pre className="TodoListOverallContainer">
+		<pre className="TodoListOverallContainer" style={props?.listStyles}>
 			<CheckBox checked={checked} />
 
 			{constructTextFromBlocks(

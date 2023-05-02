@@ -23,7 +23,7 @@ const Picture = (props: PictureProps) => {
   return (
     <>
       {url && (
-        <img style={ style} src={url} alt={""} />
+        <img style={{...style, ...props?.pictureStyles}} src={url} alt={""} />
       )}
       {captionBlocks.length > 0 && (
         constructCaptionFromBlocks(captionBlocks)

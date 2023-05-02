@@ -1,3 +1,4 @@
+import { bookmarkBlocks } from "./bookmarkBlocks";
 import { callOutBlocks } from "./calloutBlocks";
 import { codeBlocks } from "./codeBlocks";
 import { threeColumnBlocks, twoColumnBlocks } from "./columBlocks";
@@ -25,6 +26,8 @@ export {
 export { toggleHeadersBlocks } from "./toggleHeadersBlocks";
 export { toggleListBlocks } from "./toggleBlocks";
 export { twoColumnBlocks, threeColumnBlocks } from "./columBlocks";
+export { bookmarkBlocks } from './bookmarkBlocks'
+export {equationBlocks} from './equationBlocks'
 
 export const kitchenSinkBlocks = [
 	headerBlocks[0],
@@ -34,11 +37,14 @@ export const kitchenSinkBlocks = [
 	pictureBlocks[0],
 	codeBlocks[0],
 	quoteBlocks[0],
+	bookmarkBlocks[0],
 	bulletListBlocks[0],
 	numberListBlocks[0],
 	todoListBlocks[0],
 	toggleHeadersBlocks[0],
 	toggleListBlocks[0],
+	dividerBlocks[0],
 	twoColumnBlocks[0],
+	dividerBlocks[0],
 	threeColumnBlocks[0],
 ]

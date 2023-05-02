@@ -1,4 +1,5 @@
 export interface ColumnsProps { 
+  columnStyles?: React.CSSProperties;
   columnBlock: [
     {
       children: any[],
@@ -6,5 +7,5 @@ export interface ColumnsProps {
       object: string,
       type: string
     }
-  ]
+  ];
 }

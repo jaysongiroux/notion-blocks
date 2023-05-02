@@ -1,0 +1,29 @@
+.NotionBlocksBookMarkATag {
+	border-radius: 3px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	min-height: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	border: 2px dashed lightgray;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	color: rgb(76, 76, 76);
+	font-weight: bold;
+	font-family: sans-serif;
+  
+	text-decoration: none;
+}
+
+.NotionBlocksBookMarkATag:hover {
+	text-decoration: underline;
+}
+
+.NotionBlocksBookMarkCaption {
+	margin-left: 10px;
+	margin-right: 10px;
+}

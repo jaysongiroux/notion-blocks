@@ -7,7 +7,7 @@ import "./bulletList.css";
 const BulletList = (props: BulletListProps) => {
 	const listItems: RichTextProps[] = props?.bulletedListBlock?.rich_text;
 	return (
-		<pre className="BulletListPreContainer">
+		<pre className="BulletListPreContainer" style={props?.listStyles}>
 			{constructTextFromBlocks(listItems)}
 		</pre>
 	);

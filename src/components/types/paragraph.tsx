@@ -5,4 +5,5 @@ export interface ParagraphProps {
     rich_text: RichTextProps[],
     color: CombinedColor
   },
+  paragraphStyles?: React.CSSProperties;
 }

@@ -6,10 +6,12 @@ export interface BulletListProps {
 		rich_text: RichTextProps[];
 		color: CombinedColor;
 	};
+	listStyles?: React.CSSProperties;
 }
 
 export interface NumberListProps {
 	numberedNumberBlock: NumberedListBlock[];
+	listStyles?: React.CSSProperties;
 }
 
 export interface toDoListProps {
@@ -18,6 +20,7 @@ export interface toDoListProps {
 		checked: boolean;
 		color: CombinedColor;
 	};
+	listStyles?: React.CSSProperties;
 }
 
 export interface ToggleListProps {

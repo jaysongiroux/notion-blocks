@@ -1,6 +1,6 @@
 .NotionBlocksPreTagLineBreak {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	position: relative;
 	line-break: auto;
 	white-space: pre-wrap;
@@ -12,7 +12,6 @@
 
 .NotionBlocksMentionTriggerContainer {
 	text-decoration: underline;
-	cursor: pointer;
 }
 
 .NotionBlocksMentionOverlayAvatarImage {
@@ -22,8 +21,37 @@
 }
 
 .NotionBlocksMentionTooltipContentContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+}
+
+.NotionBlocksParagraphPreTag {
+	line-height: 1.75em;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.NotionBlocksHeader1Tag {
+	font-size: 2.75em;
+	font-weight: 200;
+	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.NotionBlocksHeader2Tag {
+	font-size: 2.25em;
+	font-weight: 200;
+	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.NotionBlocksHeader3Tag {
+	font-size: 1.5em;
+	font-weight: 200;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }

@@ -50,16 +50,18 @@ const Code = (props: CodeProps) => {
 	const constructContent = (rt: any) => {
 		return (
 			<>
-				<div className="CodeContainer">
-					{hoverableToolbar}
+				<div className="CodeContainer" style={props?.codeStyles}>
+					{props?.codeOverlay && (
+					hoverableToolbar
+					)}
 					<SyntaxHighlighter
 						customStyle={{
-							fontSize: "11px",
-							paddingTop: 20,
+							fontSize: "12px",
+							paddingTop: 15,
 							paddingBottom: 20,
 						}}
 						language="javascript"
-						style={getCodeTheme(props.theme)}
+						style={getCodeTheme(props?.theme)}
 					>
 						{rt}
 					</SyntaxHighlighter>

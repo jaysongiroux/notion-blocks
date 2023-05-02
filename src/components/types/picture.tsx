@@ -17,4 +17,5 @@ export interface PictureProps {
     external?: File;
     file?: File;
   },
+  pictureStyles?: React.CSSProperties;
 }

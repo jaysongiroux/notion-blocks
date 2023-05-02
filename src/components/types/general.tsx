@@ -1,3 +1,5 @@
+import { ThemeEnum } from "./code";
+
 export interface AnnotationsProps {
 	bold: boolean;
 	italic: boolean;
@@ -103,6 +105,21 @@ export enum CombinedColor {
 
 export interface NotionBlocksProps {
 	blocks: any[];
+	codeTheme?: ThemeEnum;
+	codeOverlay?: boolean;
+	containerStyles?: React.CSSProperties;
+	blockContainerStyles?: React.CSSProperties;
+	headerStyles?: React.CSSProperties;
+	toggleHeaderStyles?: React.CSSProperties;
+	toggleStyles?: React.CSSProperties;
+	paragraphStyles?: React.CSSProperties;
+	codeStyles?: React.CSSProperties;
+	pictureStyles?: React.CSSProperties;
+	calloutStyles?: React.CSSProperties;
+	quoteStyles?: React.CSSProperties;
+	listStyles?: React.CSSProperties;
+	columnStyles?: React.CSSProperties;
+	bookmarkStyles?: React.CSSProperties;
 }
 
 export interface GeneralBlockProps {

@@ -15,6 +15,8 @@ import {
 	twoColumnBlocks,
 	threeColumnBlocks,
 	kitchenSinkBlocks,
+	bookmarkBlocks,
+	equationBlocks
 } from "./assets/blocks";
 import { NotionBlocks } from "../components";
 
@@ -114,5 +116,17 @@ export const twoColumnBlock: Story = {
 export const threeColumnBlock: Story = {
 	args: {
 		blocks: threeColumnBlocks,
+	}
+}
+
+export const BookmarkBlock: Story = {
+	args: {
+		blocks: bookmarkBlocks
+	}
+}
+
+export const equationBlock: Story = {
+	args: {
+		blocks: equationBlocks
 	}
 }

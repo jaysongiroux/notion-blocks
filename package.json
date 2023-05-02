@@ -71,7 +71,6 @@
 		"equation-resolver": "^1.0.0",
 		"react-animate-height": "^3.1.1",
 		"react-equation": "^1.0.0",
-		"react-popper-tooltip": "^4.4.2",
 		"react-syntax-highlighter": "^15.5.0",
 		"tinycolor2": "^1.6.0"
 	},
