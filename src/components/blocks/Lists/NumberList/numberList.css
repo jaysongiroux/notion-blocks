@@ -8,6 +8,9 @@
 	display: list-item;
 	margin-left: 18px;
   font-family: sans-serif;
+	line-height: 1.75em;
+	margin-top: 3px;
+	margin-bottom: 3px;
 }
 
 .NumberListOLContainer {

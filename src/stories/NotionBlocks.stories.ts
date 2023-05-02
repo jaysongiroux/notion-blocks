@@ -95,16 +95,16 @@ export const toggleListBlock: Story = {
 	}
 }
 
-export const dividerBlock: Story = {
-	args: {
-		blocks: dividerBlocks,
-	},
-};
-
 export const todoListBlock: Story = {
 	args: {
 		blocks: todoListBlocks,
 	}
+};
+
+export const dividerBlock: Story = {
+	args: {
+		blocks: dividerBlocks,
+	},
 };
 
 export const twoColumnBlock: Story = {

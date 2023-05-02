@@ -106,7 +106,7 @@ export const example = () => {
 
 TODO:
 - Tables
-
+- Make columns mobile responsive
 # Toggles
 Due to Notion's API limitations, Toggle Item's content is not provided by querying a page's blocks.
 **Example**
