@@ -18,6 +18,9 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 		return propsWithoutBlocks;
 	};
 
+	const height = open === true ? "auto" : 0;
+	const hasChildren = props?.children && props?.children?.length > 0;
+
 	return (
 		<>
 			<div
@@ -48,8 +51,8 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 				</div>
 			</div>
 			<div className="ToggleHeaderDrawerContainer">
-				<AnimateHeight duration={500} height={open ? "auto" : 0}>
-					{props?.children && (
+				<AnimateHeight duration={500} height={height}>
+					{hasChildren && (
 						<NotionBlocks blocks={props?.children} {...constructProps(props)} />
 					)}
 				</AnimateHeight>

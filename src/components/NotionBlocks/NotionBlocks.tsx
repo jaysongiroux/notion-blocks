@@ -21,6 +21,20 @@ const HEADERS = ["heading_1", "heading_2", "heading_3"];
 
 const NotionBlocks = (props: NotionBlocksProps) => {
 	const handleComponent = (block: any) => {
+		if (
+			(HEADERS.includes(block?.type) && block[block?.type]?.is_toggleable) ||
+			block?.type === "toggle"
+		) {
+			return (
+				<ToggleHeaders
+					toggleHeaderBlock={block[block?.type]}
+					type={block?.type}
+					children={block?.children}
+					{...props}
+				/>
+			);
+		}
+
 		switch (block?.type) {
 			case "heading_3":
 			case "heading_2":
@@ -117,26 +131,7 @@ const NotionBlocks = (props: NotionBlocksProps) => {
 							key={index}
 							style={props.blockContainerStyles}
 						>
-							{block?.type === "toggle" && (
-								<ToggleHeaders
-									toggleHeaderBlock={block?.toggle}
-									type={block?.type}
-									children={block?.children}
-									{...props}
-								/>
-							)}
-
-							{HEADERS.includes(block?.type) &&
-							block[block?.type]?.is_toggleable ? (
-								<ToggleHeaders
-									toggleHeaderBlock={block[block?.type]}
-									type={block?.type}
-									children={block?.children}
-									{...props}
-								/>
-							) : (
-								<>{handleComponent(block)}</>
-							)}
+							{handleComponent(block)}
 						</div>
 					);
 				})}
