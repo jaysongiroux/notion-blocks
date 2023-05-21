@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ToggleHeaderProps, DrawerProps } from "../../types/headers";
 import { constructHeaderTags } from "../../helpers/headers";
 import AnimateHeight from "react-animate-height";
@@ -7,7 +7,7 @@ import NotionBlocks from "../../NotionBlocks/NotionBlocks";
 import "./toggleHeaders.css";
 
 const ToggleHeaders = (props: ToggleHeaderProps) => {
-	const [open, setOpen] = useState(false);
+	const [open, setOpen] = React.useState(false);
 
 	return (
 		<>
@@ -60,6 +60,10 @@ const Drawer = (props: DrawerProps) => {
 		delete propsWithoutBlocks?.type;
 		return propsWithoutBlocks;
 	};
+
+	if (props?.open === null) {
+		return null;
+	}
 
 	return (
 		<AnimateHeight duration={500} height={open ? "auto" : 0}>
