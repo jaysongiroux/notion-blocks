@@ -28,9 +28,3 @@ export interface HeaderStylesProps {
 	heading_2: object;
 	heading_3: object;
 }
-
-export interface DrawerProps {
-	open: boolean;
-	drawerContents: any[];
-	parentProps: any;
-}

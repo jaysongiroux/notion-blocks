@@ -1,5 +1,5 @@
 import React from "react";
-import { ToggleHeaderProps, DrawerProps } from "../../types/headers";
+import { ToggleHeaderProps } from "../../types/headers";
 import { constructHeaderTags } from "../../helpers/headers";
 import AnimateHeight from "react-animate-height";
 import NotionBlocks from "../../NotionBlocks/NotionBlocks";
@@ -8,6 +8,15 @@ import "./toggleHeaders.css";
 
 const ToggleHeaders = (props: ToggleHeaderProps) => {
 	const [open, setOpen] = React.useState(false);
+
+	const constructProps = (parentProps: any) => {
+		const propsWithoutBlocks = Object.assign({}, parentProps);
+		delete propsWithoutBlocks?.blocks;
+		delete propsWithoutBlocks?.children;
+		delete propsWithoutBlocks?.toggleHeaderBlock;
+		delete propsWithoutBlocks?.type;
+		return propsWithoutBlocks;
+	};
 
 	return (
 		<>
@@ -39,38 +48,13 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 				</div>
 			</div>
 			<div className="ToggleHeaderDrawerContainer">
-				<Drawer
-					open={open}
-					drawerContents={props?.children ?? []}
-					parentProps={props}
-				/>
+				<AnimateHeight duration={500} height={open ? "auto" : 0}>
+					{props?.children && (
+						<NotionBlocks blocks={props?.children} {...constructProps(props)} />
+					)}
+				</AnimateHeight>
 			</div>
 		</>
-	);
-};
-
-const Drawer = (props: DrawerProps) => {
-	const open = props?.open;
-
-	const constructProps = () => {
-		const propsWithoutBlocks = Object.assign({}, props?.parentProps);
-		delete propsWithoutBlocks?.blocks;
-		delete propsWithoutBlocks?.children;
-		delete propsWithoutBlocks?.toggleHeaderBlock;
-		delete propsWithoutBlocks?.type;
-		return propsWithoutBlocks;
-	};
-
-	if (props?.open === null) {
-		return null;
-	}
-
-	return (
-		<AnimateHeight duration={500} height={open ? "auto" : 0}>
-			{props?.drawerContents && (
-				<NotionBlocks blocks={props?.drawerContents} {...constructProps()} />
-			)}
-		</AnimateHeight>
 	);
 };
 
