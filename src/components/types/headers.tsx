@@ -19,7 +19,7 @@ export interface ToggleHeaderProps {
 		is_toggleable: boolean | undefined;
 	};
 	type: HeaderType;
-	children: [any];
+	children?: [any];
 	toggleHeaderStyles?: React.CSSProperties;
 }
 

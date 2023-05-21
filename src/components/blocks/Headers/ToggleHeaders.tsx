@@ -34,14 +34,14 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 					{constructHeaderTags(
 						props?.type,
 						props?.toggleHeaderBlock?.rich_text,
-						props.toggleHeaderStyles
+						props?.toggleHeaderStyles
 					)}
 				</div>
 			</div>
 			<div className="ToggleHeaderDrawerContainer">
 				<Drawer
 					open={open}
-					drawerContents={props?.children}
+					drawerContents={props?.children ?? []}
 					parentProps={props}
 				/>
 			</div>
@@ -58,11 +58,14 @@ const Drawer = (props: DrawerProps) => {
 		delete propsWithoutBlocks?.children;
 		delete propsWithoutBlocks?.toggleHeaderBlock;
 		delete propsWithoutBlocks?.type;
-		return propsWithoutBlocks
+		return propsWithoutBlocks;
 	};
+
 	return (
 		<AnimateHeight duration={500} height={open ? "auto" : 0}>
-			{props?.drawerContents && <NotionBlocks blocks={props?.drawerContents} {...constructProps()} />}
+			{props?.drawerContents && (
+				<NotionBlocks blocks={props?.drawerContents} {...constructProps()} />
+			)}
 		</AnimateHeight>
 	);
 };
