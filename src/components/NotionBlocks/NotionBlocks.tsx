@@ -21,28 +21,6 @@ const HEADERS = ["heading_1", "heading_2", "heading_3"];
 
 const NotionBlocks = (props: NotionBlocksProps) => {
 	const handleComponent = (block: any) => {
-		if (HEADERS.includes(block?.type) && block[block?.type]?.is_toggleable) {
-			return (
-				<ToggleHeaders
-					toggleHeaderBlock={block[block?.type]}
-					type={block?.type}
-					children={block?.children}
-					{...props}
-				/>
-			);
-		}
-
-		if (block?.type === "toggle") {
-			return (
-				<ToggleHeaders
-					toggleHeaderBlock={block?.toggle}
-					type={block?.type}
-					children={block?.children}
-					{...props}
-				/>
-			);
-		}
-
 		switch (block?.type) {
 			case "heading_3":
 			case "heading_2":
@@ -71,26 +49,55 @@ const NotionBlocks = (props: NotionBlocksProps) => {
 					/>
 				);
 			case "image":
-				return <Picture pictureBlock={block?.image} pictureStyles={props?.pictureStyles} />;
+				return (
+					<Picture
+						pictureBlock={block?.image}
+						pictureStyles={props?.pictureStyles}
+					/>
+				);
 			case "callout":
-				return <Callout calloutStyles={props?.calloutStyles} calloutBlock={block?.callout} />;
+				return (
+					<Callout
+						calloutStyles={props?.calloutStyles}
+						calloutBlock={block?.callout}
+					/>
+				);
 			case "quote":
-				return <Quote quoteStyles={props?.quoteStyles} quoteBlock={block?.quote} />;
+				return (
+					<Quote quoteStyles={props?.quoteStyles} quoteBlock={block?.quote} />
+				);
 			case "bulleted_list_item":
-				return <BulletList listStyles={props?.listStyles} bulletedListBlock={block?.bulleted_list_item} />;
+				return (
+					<BulletList
+						listStyles={props?.listStyles}
+						bulletedListBlock={block?.bulleted_list_item}
+					/>
+				);
 			case "numbered_list_item":
-				return <NumberList listStyles={props?.listStyles} numberedNumberBlock={block?.blocks} />;
-				case "to_do":
-					return <ToDoList listStyles={props?.listStyles} todoListProps={block?.to_do} />;
+				return (
+					<NumberList
+						listStyles={props?.listStyles}
+						numberedNumberBlock={block?.blocks}
+					/>
+				);
+			case "to_do":
+				return (
+					<ToDoList
+						listStyles={props?.listStyles}
+						todoListProps={block?.to_do}
+					/>
+				);
 			case "divider":
 				return <Divider />;
 			case "column_list":
-				return <Columns
-					columnBlock={block?.children}
-					{...props}
-				/>;
+				return <Columns columnBlock={block?.children} {...props} />;
 			case "bookmark":
-				return <Bookmark bookmarkBlock={block?.bookmark} bookmarkStyles={props?.bookmarkStyles}/>;
+				return (
+					<Bookmark
+						bookmarkBlock={block?.bookmark}
+						bookmarkStyles={props?.bookmarkStyles}
+					/>
+				);
 			default:
 				return null;
 		}
@@ -110,7 +117,26 @@ const NotionBlocks = (props: NotionBlocksProps) => {
 							key={index}
 							style={props.blockContainerStyles}
 						>
-							{handleComponent(block)}
+							{block?.type === "toggle" && (
+								<ToggleHeaders
+									toggleHeaderBlock={block?.toggle}
+									type={block?.type}
+									children={block?.children}
+									{...props}
+								/>
+							)}
+
+							{HEADERS.includes(block?.type) &&
+							block[block?.type]?.is_toggleable ? (
+								<ToggleHeaders
+									toggleHeaderBlock={block[block?.type]}
+									type={block?.type}
+									children={block?.children}
+									{...props}
+								/>
+							) : (
+								<>{handleComponent(block)}</>
+							)}
 						</div>
 					);
 				})}

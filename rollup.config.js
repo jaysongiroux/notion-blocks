@@ -33,6 +33,7 @@ export default [
 	},
 	{
 		input: "dist/esm/types/index.d.ts",
+		external: [/\.css$/u],
 		output: [{ file: "dist/index.d.ts", format: "esm" }],
 		plugins: [dts.default()],
 	},
