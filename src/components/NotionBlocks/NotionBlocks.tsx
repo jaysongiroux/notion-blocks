@@ -155,6 +155,7 @@ NotionBlocks.defaultProps = {
 	listStyles: {},
 	columnStyles: {},
 	bookmarkStyles: {},
+	blocks: [],
 };
 
 export default NotionBlocks;
