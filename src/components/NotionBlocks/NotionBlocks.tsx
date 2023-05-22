@@ -119,7 +119,7 @@ const NotionBlocks = (props: NotionBlocksProps) => {
 
 	const blocks = processNotionBlocks(props?.blocks);
 
-	if (!blocks || blocks?.length === 0) return <></>;
+	if (!blocks || blocks?.length === 0 || blocks === undefined) return <></>;
 
 	return (
 		<Entry styles={props?.containerStyles}>
