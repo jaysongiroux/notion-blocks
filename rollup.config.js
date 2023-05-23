@@ -2,6 +2,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
+import babel from "@rollup/plugin-babel";
+
 import json from "@rollup/plugin-json";
 
 const dts = require("rollup-plugin-dts");
@@ -25,7 +27,17 @@ export default [
 		],
 		plugins: [
 			resolve(),
-			commonjs(),
+			commonjs({
+				include: "node_modules/**",
+				// This was required to fix some random errors while building
+				namedExports: {
+					"react-is": ["isForwardRef", "isValidElementType"],
+				},
+			}),
+			babel({
+				exclude: "node_modules/**",
+				babelHelpers: "bundled",
+			}),
 			typescript({ tsconfig: "./tsconfig.json" }),
 			postcss(),
 			json(),
@@ -33,7 +45,7 @@ export default [
 	},
 	{
 		input: "dist/esm/types/index.d.ts",
-		external: [/\.css$/u, "react", "react-dom"],
+		external: [/\.css$/u],
 		output: [{ file: "dist/index.d.ts", format: "esm" }],
 		plugins: [dts.default()],
 	},

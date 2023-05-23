@@ -6,7 +6,7 @@ import NotionBlocks from "../../NotionBlocks";
 
 import "./toggleHeaders.css";
 
-const ToggleHeaders = (props: ToggleHeaderProps) => {
+const ToggleHeaders = React.forwardRef((props: ToggleHeaderProps) => {
 	const [open, setOpen] = React.useState(false);
 
 	const constructProps = (parentProps: any) => {
@@ -59,6 +59,6 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 			</div>
 		</>
 	);
-};
+});
 
 export default ToggleHeaders;
