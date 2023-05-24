@@ -5,6 +5,9 @@ import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import { terser } from "rollup-plugin-terser";
 import json from "@rollup/plugin-json";
+import external from "rollup-plugin-peer-deps-external";
+import typescriptEngine from "typescript";
+import { DEFAULT_EXTENSIONS } from "@babel/core";
 
 const dts = require("rollup-plugin-dts");
 
@@ -26,19 +29,23 @@ export default [
 			},
 		],
 		plugins: [
-			resolve({
-				browser: true,
-			}),
-			commonjs({
-				include: /node_modules/,
-				requireReturnsDefault: "auto",
-			}),
-			babel({
-				exclude: "node_modules/**",
-			}),
 			postcss(),
+			external({
+				includeDependencies: true,
+			}),
+			typescript({
+				tsconfig: "./tsconfig.json",
+				typescript: typescriptEngine,
+				sourceMap: false,
+			}),
+			commonjs(),
+			babel({
+				extensions: [...DEFAULT_EXTENSIONS, ".ts", "tsx"],
+				// babelHelpers: "runtime",
+				exclude: /node_modules/,
+			}),
+			resolve(),
 			json(),
-			typescript({ tsconfig: "./tsconfig.json" }),
 			terser(),
 		],
 	},
