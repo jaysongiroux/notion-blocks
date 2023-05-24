@@ -2,11 +2,10 @@ import React from "react";
 import { ToggleHeaderProps } from "../../types/headers";
 import { constructHeaderTags } from "../../helpers/headers";
 import AnimateHeight from "react-animate-height";
-import NotionBlocks from "../../NotionBlocks";
-
+import HandleComponent from "../../helpers/handler";
 import "./toggleHeaders.css";
 
-const ToggleHeaders = React.forwardRef((props: ToggleHeaderProps) => {
+const ToggleHeaders = (props: ToggleHeaderProps) => {
 	const [open, setOpen] = React.useState(false);
 
 	const constructProps = (parentProps: any) => {
@@ -53,12 +52,22 @@ const ToggleHeaders = React.forwardRef((props: ToggleHeaderProps) => {
 			<div className="ToggleHeaderDrawerContainer">
 				<AnimateHeight duration={500} height={height}>
 					{hasChildren && (
-						<NotionBlocks blocks={props?.children} {...constructProps(props)} />
+						<>
+							{props?.children?.map((block: any, index: number) => {
+								return (
+									<HandleComponent
+										key={index}
+										block={block}
+										additionalProps={constructProps(props)}
+									/>
+								);
+							})}
+						</>
 					)}
 				</AnimateHeight>
 			</div>
 		</>
 	);
-});
+};
 
 export default ToggleHeaders;

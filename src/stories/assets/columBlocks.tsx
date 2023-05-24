@@ -109,13 +109,13 @@ export const threeColumnBlocks = [
 					{
 						has_children: false,
 						archived: false,
-						type: "numbered_list_item",
-						numbered_list_item: {
+						type: "heading_3",
+						heading_3: {
 							rich_text: [
 								{
 									type: "text",
 									text: {
-										content: "Lorem",
+										content: "Headers H3",
 										link: null,
 									},
 									annotations: {
@@ -126,241 +126,11 @@ export const threeColumnBlocks = [
 										code: false,
 										color: "default",
 									},
-									plain_text: "Lorem",
+									plain_text: "Headers H3",
 									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: " ipsum dolor sit amet. Eos ma",
-										link: null,
-									},
-									annotations: {
-										bold: true,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text: " ipsum dolor sit amet. Eos ma",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: "gni sim",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text: "gni sim",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: "ilique sit mollitia quas sed quas s",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: true,
-										code: false,
-										color: "default",
-									},
-									plain_text: "ilique sit mollitia quas sed quas s",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: "unt.",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text: "unt.",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: " Et quidem temporibus ut ",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: true,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text: " Et quidem temporibus ut ",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: "volupta",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text: "volupta",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content:
-											"s alias eos quia fuga aut facere possimus et laboriosa",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: true,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text:
-										"s alias eos quia fuga aut facere possimus et laboriosa",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content:
-											"m dolorum. Qui consequatur cumque ut obcaecati dolorum eum ",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text:
-										"m dolorum. Qui consequatur cumque ut obcaecati dolorum eum ",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: "quia atque non magnam nemo est repe",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "pink",
-									},
-									plain_text: "quia atque non magnam nemo est repe",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content:
-											"llat odit ut omnis animi. Ut ullam quia eum commodi saepe aut repellendus p",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "brown",
-									},
-									plain_text:
-										"llat odit ut omnis animi. Ut ullam quia eum commodi saepe aut repellendus p",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: "erspiciatis q",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text: "erspiciatis q",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content: "uo odit autem eum dolor ",
-										link: null,
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: true,
-										color: "default",
-									},
-									plain_text: "uo odit autem eum dolor ",
-									href: null,
-								},
-								{
-									type: "text",
-									text: {
-										content:
-											"magni sit accusamus expedita eum debitis officia.",
-										link: {
-											url: "https://google.com",
-										},
-									},
-									annotations: {
-										bold: false,
-										italic: false,
-										strikethrough: false,
-										underline: false,
-										code: false,
-										color: "default",
-									},
-									plain_text:
-										"magni sit accusamus expedita eum debitis officia.",
-									href: "https://google.com",
 								},
 							],
+							is_toggleable: false,
 							color: "default",
 						},
 					},
@@ -444,7 +214,7 @@ export const threeColumnBlocks = [
 ];
 
 export const twoColumnBlocks = [
-  {
+	{
 		object: "block",
 		has_children: true,
 		archived: false,
@@ -619,4 +389,4 @@ export const twoColumnBlocks = [
 			},
 		],
 	},
-]
+];

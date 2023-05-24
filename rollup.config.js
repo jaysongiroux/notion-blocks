@@ -1,9 +1,9 @@
 import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import babel from "@rollup/plugin-babel";
-
+import commonjs from "@rollup/plugin-commonjs";
+import { terser } from "rollup-plugin-terser";
 import json from "@rollup/plugin-json";
 
 const dts = require("rollup-plugin-dts");
@@ -26,21 +26,20 @@ export default [
 			},
 		],
 		plugins: [
-			resolve(),
+			resolve({
+				browser: true,
+			}),
 			commonjs({
-				include: "node_modules/**",
-				// This was required to fix some random errors while building
-				namedExports: {
-					"react-is": ["isForwardRef", "isValidElementType"],
-				},
+				include: /node_modules/,
+				requireReturnsDefault: "auto",
 			}),
 			babel({
 				exclude: "node_modules/**",
-				babelHelpers: "bundled",
 			}),
-			typescript({ tsconfig: "./tsconfig.json" }),
 			postcss(),
 			json(),
+			typescript({ tsconfig: "./tsconfig.json" }),
+			terser(),
 		],
 	},
 	{
