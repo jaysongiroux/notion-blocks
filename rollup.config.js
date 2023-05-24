@@ -41,10 +41,11 @@ export default [
 			commonjs(),
 			babel({
 				extensions: [...DEFAULT_EXTENSIONS, ".ts", "tsx"],
-				// babelHelpers: "runtime",
 				exclude: /node_modules/,
 			}),
-			resolve(),
+			resolve({
+				browser: true,
+			}),
 			json(),
 			terser(),
 		],
