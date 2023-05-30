@@ -1,2 +1,2 @@
 export { default as NotionBlocks } from "./NotionBlocks";
-export { default as ToggleHeaders } from './blocks/Headers/ToggleHeaders'
+export { default as FetchNotionBlocks } from "./FetchNotionBlocks";

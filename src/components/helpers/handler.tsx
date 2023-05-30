@@ -12,6 +12,8 @@ import Paragraph from "../blocks/Paragraph/Paragraph";
 import Picture from "../blocks/Picture/Picture";
 import Quote from "../blocks/Quote/Quote";
 import { ThemeEnum } from "../types/code";
+import { Equation } from "../blocks/Equation";
+import { ChildPage } from "../blocks/ChildPage";
 
 export const HEADERS = ["heading_1", "heading_2", "heading_3"];
 
@@ -32,7 +34,6 @@ const HandleComponent = (props: HandleComponentProps) => {
 			<ToggleHeaders
 				toggleHeaderBlock={block[block?.type]}
 				type={block?.type}
-				children={block?.children}
 				{...additionalProps}
 			/>
 		);
@@ -111,6 +112,11 @@ const HandleComponent = (props: HandleComponentProps) => {
 			return <Divider />;
 		case "column_list":
 			return <Columns columnBlock={block?.children} {...additionalProps} />;
+		case "equation":
+			return <Equation equationBlock={block?.equation} {...additionalProps} />;
+		case "child_page":
+			return <ChildPage childPageBlock={block} {...additionalProps} />;
+
 		case "bookmark":
 			return (
 				<Bookmark
@@ -121,6 +127,10 @@ const HandleComponent = (props: HandleComponentProps) => {
 		default:
 			return null;
 	}
+};
+
+HandleComponent.defaultProps = {
+	additionalProps: {},
 };
 
 export default HandleComponent;

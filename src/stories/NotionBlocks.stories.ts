@@ -1,132 +1,142 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import {
-	headerBlocks,
-	paragraphBlocks,
-	codeBlocks,
-	pictureBlocks,
-	callOutBlocks,
-	quoteBlocks,
-	bulletListBlocks,
-	dividerBlocks,
-	numberListBlocks,
-	todoListBlocks,
-	toggleHeadersBlocks,
-	toggleListBlocks,
-	twoColumnBlocks,
-	threeColumnBlocks,
-	kitchenSinkBlocks,
-	bookmarkBlocks,
-	equationBlocks
+  headerBlocks,
+  paragraphBlocks,
+  codeBlocks,
+  pictureBlocks,
+  callOutBlocks,
+  quoteBlocks,
+  bulletListBlocks,
+  dividerBlocks,
+  numberListBlocks,
+  todoListBlocks,
+  toggleHeadersBlocks,
+  toggleListBlocks,
+  twoColumnBlocks,
+  threeColumnBlocks,
+  kitchenSinkBlocks,
+  bookmarkBlocks,
+  equationBlocks,
+  childPageBlocks,
 } from "./assets/blocks";
 import { NotionBlocks } from "../components";
 
+import "../components/styles/katex.css";
+import { ThemeEnum } from "../components/types/code";
+
 const meta = {
-	title: "NotionBlocks/NotionBlocks",
-	component: NotionBlocks,
-	argTypes: {},
+  title: "NotionBlocks/NotionBlocks",
+  component: NotionBlocks,
+  argTypes: {},
 } satisfies Meta<typeof NotionBlocks>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-
 export const kitchenSink: Story = {
-	args: {
-		blocks: kitchenSinkBlocks
-	}
-}
+  args: {
+    blocks: kitchenSinkBlocks,
+  },
+};
 export const headerBlock: Story = {
-	args: {
-		blocks: headerBlocks,
-	},
+  args: {
+    blocks: headerBlocks,
+  },
 };
 
 export const ToggleHeaderBlock: Story = {
-	args: {
-		blocks: toggleHeadersBlocks,
-	}
-}
+  args: {
+    blocks: toggleHeadersBlocks,
+  },
+};
 
 export const paragraphBlock: Story = {
-	args: {
-		blocks: paragraphBlocks,
-	},
+  args: {
+    blocks: paragraphBlocks,
+  },
 };
 
 export const codeBlock: Story = {
-	args: {
-		blocks: codeBlocks,
-	},
+  args: {
+    blocks: codeBlocks,
+	codeTheme: ThemeEnum.Dark
+  },
 };
 
 export const ImageBlock: Story = {
-	args: {
-		blocks: pictureBlocks,
-	},
+  args: {
+    blocks: pictureBlocks,
+  },
 };
 
 export const CalloutBlock: Story = {
-	args: {
-		blocks: callOutBlocks,
-	},
+  args: {
+    blocks: callOutBlocks,
+  },
 };
 
 export const QuoteBlock: Story = {
-	args: {
-		blocks: quoteBlocks,
-	},
+  args: {
+    blocks: quoteBlocks,
+  },
 };
 
 export const BulletedListBlock: Story = {
-	args: {
-		blocks: bulletListBlocks,
-	},
+  args: {
+    blocks: bulletListBlocks,
+  },
 };
 
 export const numberedListBlock: Story = {
-	args: {
-		blocks: numberListBlocks,
-	},
+  args: {
+    blocks: numberListBlocks,
+  },
 };
 
 export const toggleListBlock: Story = {
-	args: {
-		blocks: toggleListBlocks,
-	}
-}
+  args: {
+    blocks: toggleListBlocks,
+  },
+};
 
 export const todoListBlock: Story = {
-	args: {
-		blocks: todoListBlocks,
-	}
+  args: {
+    blocks: todoListBlocks,
+  },
 };
 
 export const dividerBlock: Story = {
-	args: {
-		blocks: dividerBlocks,
-	},
+  args: {
+    blocks: dividerBlocks,
+  },
 };
 
 export const twoColumnBlock: Story = {
-	args: {
-		blocks: twoColumnBlocks,
-	}
-}
+  args: {
+    blocks: twoColumnBlocks,
+  },
+};
 
 export const threeColumnBlock: Story = {
-	args: {
-		blocks: threeColumnBlocks,
-	}
-}
+  args: {
+    blocks: threeColumnBlocks,
+  },
+};
 
 export const BookmarkBlock: Story = {
-	args: {
-		blocks: bookmarkBlocks
-	}
-}
+  args: {
+    blocks: bookmarkBlocks,
+  },
+};
 
 export const equationBlock: Story = {
-	args: {
-		blocks: equationBlocks
-	}
-}
+  args: {
+    blocks: equationBlocks,
+  },
+};
+
+export const childPageBlock: Story = {
+  args: {
+    blocks: childPageBlocks,
+  },
+};

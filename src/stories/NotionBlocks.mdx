@@ -1,0 +1,136 @@
+import { Meta } from "@storybook/react";
+
+## NotionBlocks
+
+React Component that receives a list of blocks from either `fetchNotionBlocks` or notion API.
+
+### Usage
+
+```tsx
+import { NotionBlocks } from "notion-blcoks";
+
+return <NotionBlocks blocks={BLOCKS} />;
+```
+
+### API
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>blocks</td>
+      <td>Block[]</td>
+      <td>List of blocks to render</td>
+      <td>`[]`</td>
+    </tr>
+    <tr>
+      <td>CodeTheme</td>
+      <td>string</td>
+      <td>Theme for code blocks Options: `light` or `dark`</td>
+      <td>`light`</td>
+    </tr>
+    <tr>
+      <td>codeOverlay</td>
+      <td>boolean</td>
+      <td>Whether to show code overlay that shows copy button and language</td>
+      <td>`true`</td>
+    </tr>
+    <tr>
+      <td>blockContainerStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the entire block container</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>containerStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the entry wrapper container</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>headerStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the header</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>toggleHeaderStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the toggle header</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>toggleStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the toggle</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>codeStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the code block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>pictureStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the picture block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>calloutStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the callout block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>quoteStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the quote block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>listStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the list block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>columnStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the column block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>bookmarkStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the bookmark block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>equationStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the equation block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>childPageStyles</td>
+      <td>CSSProperties</td>
+      <td>Styles for the child page block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>onChildPageClick</td>
+      <td>(id: string, title: string) =&gt; void</td>
+      <td>Callback function when child page is clicked</td>
+      <td>`() => {}`</td>
+    </tr>
+  </tbody>
+</table>

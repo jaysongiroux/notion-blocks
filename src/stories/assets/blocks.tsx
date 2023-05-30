@@ -1,10 +1,16 @@
 import { bookmarkBlocks } from "./bookmarkBlocks";
 import { callOutBlocks } from "./calloutBlocks";
+import { childPageBlocks } from "./childPageBlocks";
 import { codeBlocks } from "./codeBlocks";
 import { threeColumnBlocks, twoColumnBlocks } from "./columBlocks";
 import { dividerBlocks } from "./dividerBlocks";
+import { equationBlocks } from "./equationBlocks";
 import { headerBlocks } from "./headerBlocks";
-import { bulletListBlocks, numberListBlocks, todoListBlocks } from "./listBlocks";
+import {
+	bulletListBlocks,
+	numberListBlocks,
+	todoListBlocks,
+} from "./listBlocks";
 import { paragraphBlocks } from "./paragraphBlocks";
 import { pictureBlocks } from "./pictureBlocks";
 import { quoteBlocks } from "./quoteBlocks";
@@ -26,20 +32,23 @@ export {
 export { toggleHeadersBlocks } from "./toggleHeadersBlocks";
 export { toggleListBlocks } from "./toggleBlocks";
 export { twoColumnBlocks, threeColumnBlocks } from "./columBlocks";
-export { bookmarkBlocks } from './bookmarkBlocks'
-export {equationBlocks} from './equationBlocks'
+export { bookmarkBlocks } from "./bookmarkBlocks";
+export { equationBlocks } from "./equationBlocks";
+export { childPageBlocks } from "./childPageBlocks";
 
 export const kitchenSinkBlocks = [
 	headerBlocks[0],
 	dividerBlocks[0],
 	paragraphBlocks[0],
+	equationBlocks[2],
+	childPageBlocks[0],
 	callOutBlocks[0],
 	pictureBlocks[0],
 	codeBlocks[0],
 	quoteBlocks[0],
 	bookmarkBlocks[0],
 	bulletListBlocks[0],
-	numberListBlocks[0],
+	numberListBlocks[6],
 	todoListBlocks[0],
 	toggleHeadersBlocks[0],
 	toggleListBlocks[0],
@@ -47,4 +56,4 @@ export const kitchenSinkBlocks = [
 	twoColumnBlocks[0],
 	dividerBlocks[0],
 	threeColumnBlocks[0],
-]
+];

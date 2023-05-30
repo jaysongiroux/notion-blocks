@@ -4,7 +4,75 @@ export const pictureBlocks = [
 		archived: false,
 		type: "image",
 		image: {
-			caption: [],
+			caption: [
+				{
+					type: "equation",
+					equation: {
+						expression: "a^2+b^2=c^2",
+					},
+					annotations: {
+						bold: false,
+						italic: false,
+						strikethrough: false,
+						underline: false,
+						code: false,
+						color: "default",
+					},
+					plain_text: "a^2+b^2=c^2",
+					href: null,
+				},
+				{
+					type: "text",
+					text: {
+						content: "This",
+						link: null,
+					},
+					annotations: {
+						bold: true,
+						italic: false,
+						strikethrough: false,
+						underline: false,
+						code: false,
+						color: "default",
+					},
+					plain_text: " This",
+					href: null,
+				},
+				{
+					type: "text",
+					text: {
+						content: " is a pretty",
+						link: null,
+					},
+					annotations: {
+						bold: false,
+						italic: true,
+						strikethrough: false,
+						underline: false,
+						code: false,
+						color: "default",
+					},
+					plain_text: " is a pretty",
+					href: null,
+				},
+				{
+					type: "text",
+					text: {
+						content: " ",
+						link: null,
+					},
+					annotations: {
+						bold: false,
+						italic: false,
+						strikethrough: false,
+						underline: false,
+						code: false,
+						color: "default",
+					},
+					plain_text: " ",
+					href: null,
+				},
+			],
 			type: "external",
 			external: {
 				url: "https://images.unsplash.com/photo-1682511366293-c34ecd291e5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",

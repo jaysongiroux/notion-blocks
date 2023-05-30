@@ -4,6 +4,64 @@ export const bulletListBlocks = [
 		archived: false,
 		type: "bulleted_list_item",
 		bulleted_list_item: {
+			children: [
+				{
+					has_children: false,
+					archived: false,
+					type: "bulleted_list_item",
+					bulleted_list_item: {
+						rich_text: [
+							{
+								type: "text",
+								text: {
+									content: "Nested list",
+									link: null,
+								},
+								annotations: {
+									bold: false,
+									italic: false,
+									strikethrough: false,
+									underline: false,
+									code: false,
+									color: "default",
+								},
+								plain_text: "Nested list",
+								href: null,
+							},
+						],
+						children: [
+							{
+								has_children: false,
+								archived: false,
+								type: "bulleted_list_item",
+								bulleted_list_item: {
+									rich_text: [
+										{
+											type: "text",
+											text: {
+												content: "Nested list",
+												link: null,
+											},
+											annotations: {
+												bold: false,
+												italic: false,
+												strikethrough: false,
+												underline: false,
+												code: false,
+												color: "default",
+											},
+											plain_text: "Nested list",
+											href: null,
+										},
+									],
+									color: "default",
+								},
+							},
+						],
+						color: "default",
+					},
+				},
+			],
 			rich_text: [
 				{
 					type: "text",
@@ -718,12 +776,181 @@ export const numberListBlocks = [
 		},
 	},
 	{
-		has_children: false,
+		object: "block",
+		has_children: true,
 		archived: false,
 		type: "numbered_list_item",
 		numbered_list_item: {
-			rich_text: [],
+			rich_text: [
+				{
+					type: "text",
+					text: {
+						content: "Number List with several sub-lists",
+						link: null,
+					},
+					annotations: {
+						bold: false,
+						italic: false,
+						strikethrough: false,
+						underline: false,
+						code: false,
+						color: "default",
+					},
+					plain_text: "Number List with several sub-lists",
+					href: null,
+				},
+			],
 			color: "default",
+			children: [
+				{
+					object: "block",
+					has_children: true,
+					archived: false,
+					type: "numbered_list_item",
+					numbered_list_item: {
+						rich_text: [
+							{
+								type: "text",
+								text: {
+									content: "first tier",
+									link: null,
+								},
+								annotations: {
+									bold: false,
+									italic: false,
+									strikethrough: false,
+									underline: false,
+									code: false,
+									color: "default",
+								},
+								plain_text: "first tier",
+								href: null,
+							},
+						],
+						color: "default",
+						children: [
+							{
+								object: "block",
+								has_children: false,
+								archived: false,
+								type: "numbered_list_item",
+								numbered_list_item: {
+									rich_text: [
+										{
+											type: "text",
+											text: {
+												content: "second tier",
+												link: null,
+											},
+											annotations: {
+												bold: false,
+												italic: false,
+												strikethrough: false,
+												underline: false,
+												code: false,
+												color: "default",
+											},
+											plain_text: "second tier",
+											href: null,
+										},
+									],
+									color: "default",
+								},
+							},
+						],
+					},
+				},
+				{
+					object: "block",
+					has_children: true,
+					archived: false,
+					type: "numbered_list_item",
+					numbered_list_item: {
+						rich_text: [
+							{
+								type: "text",
+								text: {
+									content: "first second tier",
+									link: null,
+								},
+								annotations: {
+									bold: false,
+									italic: false,
+									strikethrough: false,
+									underline: false,
+									code: false,
+									color: "default",
+								},
+								plain_text: "first second tier",
+								href: null,
+							},
+						],
+						color: "default",
+						children: [
+							{
+								object: "block",
+								id: "506b74c0-9b83-4618-b245-3dfd114a9abd",
+								has_children: true,
+								archived: false,
+								type: "numbered_list_item",
+								numbered_list_item: {
+									rich_text: [
+										{
+											type: "text",
+											text: {
+												content: "first second second tier",
+												link: null,
+											},
+											annotations: {
+												bold: false,
+												italic: false,
+												strikethrough: false,
+												underline: false,
+												code: false,
+												color: "default",
+											},
+											plain_text: "first second second tier",
+											href: null,
+										},
+									],
+									color: "default",
+									children: [
+										{
+											object: "block",
+											id: "72fbfa6d-ead2-46e4-bdba-5549ddbfb1db",
+											has_children: false,
+											archived: false,
+											type: "numbered_list_item",
+											numbered_list_item: {
+												rich_text: [
+													{
+														type: "text",
+														text: {
+															content: "third second tier",
+															link: null,
+														},
+														annotations: {
+															bold: false,
+															italic: false,
+															strikethrough: false,
+															underline: false,
+															code: false,
+															color: "default",
+														},
+														plain_text: "third second tier",
+														href: null,
+													},
+												],
+												color: "default",
+											},
+										},
+									],
+								},
+							},
+						],
+					},
+				},
+			],
 		},
 	},
 ];
@@ -772,6 +999,66 @@ export const todoListBlocks = [
 			],
 			checked: false,
 			color: "default",
+			children: [
+				{
+					has_children: false,
+					archived: false,
+					type: "to_do",
+					to_do: {
+						children: [
+							{
+								has_children: false,
+								archived: false,
+								type: "to_do",
+								to_do: {
+									rich_text: [
+										{
+											type: "text",
+											text: {
+												content: "Checked second nested",
+												link: null,
+											},
+											annotations: {
+												bold: false,
+												italic: false,
+												strikethrough: false,
+												underline: false,
+												code: false,
+												color: "default",
+											},
+											plain_text: "Checked second nested",
+											href: null,
+										},
+									],
+									checked: true,
+									color: "default",
+								},
+							},
+						],
+						rich_text: [
+							{
+								type: "text",
+								text: {
+									content: "Checked nested",
+									link: null,
+								},
+								annotations: {
+									bold: false,
+									italic: false,
+									strikethrough: false,
+									underline: false,
+									code: false,
+									color: "default",
+								},
+								plain_text: "Checked nested",
+								href: null,
+							},
+						],
+						checked: true,
+						color: "default",
+					},
+				},
+			],
 		},
 	},
 	{

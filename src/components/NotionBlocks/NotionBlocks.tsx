@@ -30,6 +30,7 @@ const NotionBlocks = (props: NotionBlocksProps) => {
 };
 
 NotionBlocks.defaultProps = {
+	blocks: [],
 	codeTheme: ThemeEnum.Light,
 	codeOverlay: true,
 	blockContainerStyles: {},
@@ -44,7 +45,9 @@ NotionBlocks.defaultProps = {
 	listStyles: {},
 	columnStyles: {},
 	bookmarkStyles: {},
-	blocks: [],
+	equationStyles: {},
+	childPageStyles: {},
+	onChildPageClick: (id: string, title: string) => {},
 };
 
 export default NotionBlocks;

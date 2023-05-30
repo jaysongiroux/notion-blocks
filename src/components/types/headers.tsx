@@ -17,9 +17,9 @@ export interface ToggleHeaderProps {
 		rich_text: RichTextProps[];
 		color: CombinedColor;
 		is_toggleable: boolean | undefined;
+		children?: [any];
 	};
 	type: HeaderType;
-	children?: [any];
 	toggleHeaderStyles?: React.CSSProperties;
 }
 

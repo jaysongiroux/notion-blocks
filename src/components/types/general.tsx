@@ -53,10 +53,13 @@ export interface RichTextProps {
 export interface NumberedListBlock {
 	archived: boolean;
 	has_children: boolean;
+	isChild?: boolean;
 	numbered_list_item: {
 		color: CombinedColor;
 		rich_text: RichTextProps[];
+		children: any[];
 	};
+	children: any[];
 }
 
 export interface CaptionProps {
@@ -120,6 +123,8 @@ export interface NotionBlocksProps {
 	listStyles?: React.CSSProperties;
 	columnStyles?: React.CSSProperties;
 	bookmarkStyles?: React.CSSProperties;
+	equationStyles?: React.CSSProperties;
+	childPageStyles?: React.CSSProperties;
 }
 
 export interface GeneralBlockProps {

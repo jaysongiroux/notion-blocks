@@ -1,0 +1,16 @@
+.ChildPageContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  font-family: sans-serif;
+  cursor: pointer;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.ChildPageText {
+  text-decoration: underline;
+  text-decoration-color: lightgray;
+  text-underline-offset: 3px;
+  transform: translateY(-1px);
+}

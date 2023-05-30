@@ -3,6 +3,7 @@ import { toDoListProps } from "../../../types/lists";
 import { constructTextFromBlocks } from "../../../helpers/text";
 import { RichTextProps } from "../../../types/general";
 import "./todoList.css";
+import HandleComponent from "../../../helpers/handler";
 
 interface CheckBoxProps {
 	checked: boolean;
@@ -19,15 +20,22 @@ const ToDoList = (props: toDoListProps) => {
 		: {};
 
 	return (
-		<pre className="TodoListOverallContainer" style={props?.listStyles}>
-			<CheckBox checked={checked} />
+		<>
+			<pre className="TodoListOverallContainer" style={props?.listStyles}>
+				<CheckBox checked={checked} />
 
-			{constructTextFromBlocks(
-				listItems,
-				checkedStyle,
-				checked ? "gray" : "black"
-			)}
-		</pre>
+				{constructTextFromBlocks(
+					listItems,
+					checkedStyle,
+					checked ? "gray" : "black"
+				)}
+			</pre>
+			{props?.todoListProps?.children?.map((block: any, key: number) => (
+				<pre key={key} style={{ marginLeft: 30 }}>
+					<HandleComponent block={block} additionalProps={props} />
+				</pre>
+			))}
+		</>
 	);
 };
 
@@ -50,6 +58,7 @@ const CheckBox = (props: CheckBoxProps) => {
 			<div className="ToDoListCheckLeft" />
 		</>
 	);
+
 	return (
 		<div style={boxStyle} className="ToDoListCheckContainer">
 			{checked && (

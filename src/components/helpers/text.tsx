@@ -2,8 +2,7 @@ import React from "react";
 import { RichTextProps } from "../types/general";
 import Mention from "../blocks/Mention/Mention";
 import { constructText, handleColor } from "./utils";
-import { Equation, EquationOptions, defaultErrorHandler } from "react-equation";
-import { defaultVariables, defaultFunctions } from "equation-resolver";
+import TeX from "@matejmazur/react-katex";
 
 import "../helpers/general.css";
 
@@ -28,13 +27,7 @@ export const constructTextFromBlocks = (
 					} else if (text?.type === "equation") {
 						return (
 							<span key={key}>
-								<EquationOptions
-									variables={defaultVariables}
-									functions={defaultFunctions}
-									errorHandler={defaultErrorHandler}
-								>
-									<Equation value={text?.plain_text} />
-								</EquationOptions>
+								<TeX math={text?.plain_text} />
 							</span>
 						);
 					}

@@ -18,7 +18,9 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 	};
 
 	const height = open === true ? "auto" : 0;
-	const hasChildren = props?.children ? props?.children?.length > 0 : false;
+	const hasChildren = props?.toggleHeaderBlock?.children
+		? props?.toggleHeaderBlock?.children?.length > 0
+		: false;
 
 	return (
 		<>
@@ -53,15 +55,17 @@ const ToggleHeaders = (props: ToggleHeaderProps) => {
 				<AnimateHeight duration={500} height={height}>
 					{hasChildren && (
 						<>
-							{props?.children?.map((block: any, index: number) => {
-								return (
-									<HandleComponent
-										key={index}
-										block={block}
-										additionalProps={constructProps(props)}
-									/>
-								);
-							})}
+							{props?.toggleHeaderBlock?.children?.map(
+								(block: any, index: number) => {
+									return (
+										<HandleComponent
+											key={index}
+											block={block}
+											additionalProps={constructProps(props)}
+										/>
+									);
+								}
+							)}
 						</>
 					)}
 				</AnimateHeight>

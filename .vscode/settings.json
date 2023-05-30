@@ -1,4 +1,10 @@
 {
 	"git-blame.gitWebUrl": "",
-	"cSpell.words": ["Callout", "toggleable"]
+	"cSpell.words": [
+		"Callout",
+		"hoverable",
+		"toggleable"
+	],
+	"editor.fontFamily": "'fira code'",
+	"liveshare.featureSet": "insiders"
 }

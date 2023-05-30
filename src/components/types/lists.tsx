@@ -5,8 +5,10 @@ export interface BulletListProps {
 	bulletedListBlock: {
 		rich_text: RichTextProps[];
 		color: CombinedColor;
+		children?: any[];
 	};
 	listStyles?: React.CSSProperties;
+	has_children?: boolean;
 }
 
 export interface NumberListProps {
@@ -19,6 +21,7 @@ export interface toDoListProps {
 		rich_text: RichTextProps[];
 		checked: boolean;
 		color: CombinedColor;
+		children: any[];
 	};
 	listStyles?: React.CSSProperties;
 }

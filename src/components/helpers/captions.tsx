@@ -1,8 +1,7 @@
 import React from "react";
 import { getStyles } from "../helpers/generalStyles";
 import { CaptionProps, RichTextProps, StylesProps } from "../types/general";
-import { Equation, EquationOptions, defaultErrorHandler } from "react-equation";
-import { defaultVariables, defaultFunctions } from "equation-resolver";
+import TeX from "@matejmazur/react-katex";
 
 import "./caption.css";
 
@@ -40,15 +39,8 @@ export const constructCaption = (co: CaptionProps | RichTextProps) => {
 
 	if (co?.type === "equation") {
 		return (
-			<span>
-				<EquationOptions
-					variables={defaultVariables}
-					functions={defaultFunctions}
-					errorHandler={defaultErrorHandler}
-					style={styles}
-				>
-					<Equation value={co?.plain_text} />
-				</EquationOptions>
+			<span style={styles}>
+				<TeX math={co?.plain_text} />
 			</span>
 		);
 	}

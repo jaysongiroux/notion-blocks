@@ -2,6 +2,7 @@ import React from "react";
 import { NumberListProps } from "../../../types/lists";
 import { NumberedListBlock } from "../../../types/general";
 import { constructTextFromBlocks } from "../../../helpers/text";
+import NotionBlocks from "../../../NotionBlocks/NotionBlocks";
 import "./numberList.css";
 
 const NumberList = (props: NumberListProps) => {
@@ -10,9 +11,26 @@ const NumberList = (props: NumberListProps) => {
 	return (
 		<ol className="NumberListOLContainer" style={props?.listStyles}>
 			{blocks?.map((block: NumberedListBlock, key: number) => (
-				<pre className={"NumberListPreTag"} key={key}>
-					{constructTextFromBlocks(block?.numbered_list_item?.rich_text)}
-				</pre>
+				<div key={key}>
+					<pre
+						className={`NumberListPreTag ${
+							block?.isChild && "NumberListPreChild "
+						}`}
+					>
+						{constructTextFromBlocks(block?.numbered_list_item?.rich_text)}
+					</pre>
+					<ul className={`NumberListSubList`}>
+						{block?.numbered_list_item?.children?.map(
+							(childBlock: any, key: number) => {
+								return (
+									<li key={key} className={"NumberListSubList"}>
+										<NotionBlocks blocks={[childBlock]} {...props} />
+									</li>
+								);
+							}
+						)}
+					</ul>
+				</div>
 			))}
 		</ol>
 	);
