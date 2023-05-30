@@ -1,1 +1,1 @@
-export { default } from "./Mention";
+export { default } from './Mention';

@@ -1,1 +1,1 @@
-export { default } from "./FetchNotionBlocks";
+export { default } from './FetchNotionBlocks';

@@ -1,1 +1,1 @@
-export {default as ChildPage} from './ChildPage';
+export { default as ChildPage } from './ChildPage';

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from '@storybook/react';
 import {
   headerBlocks,
   paragraphBlocks,
@@ -18,14 +18,14 @@ import {
   bookmarkBlocks,
   equationBlocks,
   childPageBlocks,
-} from "./assets/blocks";
-import { NotionBlocks } from "../components";
+} from './assets/blocks';
+import { NotionBlocks } from '../components';
 
-import "../components/styles/katex.css";
-import { ThemeEnum } from "../components/types/code";
+import '../components/styles/katex.css';
+import { ThemeEnum } from '../components/types/code';
 
 const meta = {
-  title: "NotionBlocks/NotionBlocks",
+  title: 'NotionBlocks/NotionBlocks',
   component: NotionBlocks,
   argTypes: {},
 } satisfies Meta<typeof NotionBlocks>;
@@ -59,7 +59,7 @@ export const paragraphBlock: Story = {
 export const codeBlock: Story = {
   args: {
     blocks: codeBlocks,
-	codeTheme: ThemeEnum.Dark
+    codeTheme: ThemeEnum.Dark,
   },
 };
 

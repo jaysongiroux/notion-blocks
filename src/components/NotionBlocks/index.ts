@@ -1,1 +1,1 @@
-export { default } from "./NotionBlocks";
+export { default } from './NotionBlocks';

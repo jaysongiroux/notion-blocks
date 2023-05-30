@@ -1,1 +1,1 @@
-export { default } from "./BulletList";
+export { default } from './BulletList';

@@ -1,1 +1,1 @@
-export { default as Equation} from "./Equation";
+export { default as Equation } from './Equation';
