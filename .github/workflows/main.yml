@@ -15,13 +15,13 @@ jobs:
         with:
           node-version: "18.x"
       - name: Install dependencies
-        run: yarn install
+        run: npm ci --force
       - name: Build package with Rollup
-        run: yarn rollup
+        run: npm run rollup
       - name: Release
         run: npx semantic-release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+          NPM_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
   chromatic-deployment:
@@ -32,10 +32,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
-        run: yarn install
+        run: npm ci --force
         env:
-          # NPM_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
-          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+          NPM_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
         # 👇 Adds Chromatic as a step in the workflow
       - name: Publish to Chromatic
         uses: chromaui/action@v1
