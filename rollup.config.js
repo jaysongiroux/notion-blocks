@@ -8,6 +8,7 @@ import json from '@rollup/plugin-json';
 import external from 'rollup-plugin-peer-deps-external';
 import typescriptEngine from 'typescript';
 import { DEFAULT_EXTENSIONS } from '@babel/core';
+import copy from 'rollup-plugin-copy';
 
 const dts = require('rollup-plugin-dts');
 
@@ -48,6 +49,21 @@ export default [
       }),
       json(),
       terser(),
+      copy(
+        {
+          targets: [
+            {
+              src: 'src/components/styles/katex.css',
+              dest: 'dist/styles',
+            },
+            // copy all fonts to dist/styles/fonts
+            {
+              src: 'src/components/styles/fonts/*',
+              dest: 'dist/styles/fonts',
+            }
+          ],
+        },
+      )
     ],
   },
   {

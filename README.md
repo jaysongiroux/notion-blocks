@@ -22,7 +22,7 @@ A React component package to be given the `blocks` from the notion API to render
 
 ```js
 import {NotionBlocks} from 'notion-blocks'
-import 'notion-blocks/src/components/styles/katex.css'
+import 'notion-blocks/dist/styles/katex.css'
 
 
 export const example = () => {
