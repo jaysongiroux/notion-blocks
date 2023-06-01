@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import { Meta } from '@storybook/react';
 
 ## NotionBlocks
 
@@ -7,7 +7,7 @@ React Component that receives a list of blocks from either `fetchNotionBlocks` o
 ### Usage
 
 ```tsx
-import { NotionBlocks } from "notion-blcoks";
+import { NotionBlocks } from 'notion-blocks';
 
 return <NotionBlocks blocks={BLOCKS} />;
 ```
@@ -124,6 +124,24 @@ return <NotionBlocks blocks={BLOCKS} />;
       <td>childPageStyles</td>
       <td>CSSProperties</td>
       <td>Styles for the child page block</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>tableStyle</td>
+      <td>CSSProperties</td>
+      <td>styles for table container</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>tableRowStyle</td>
+      <td>CSSProperties</td>
+      <td>Styles for all table rows except headers (row and column)</td>
+      <td>`{}`</td>
+    </tr>
+    <tr>
+      <td>tableHeaderStyle</td>
+      <td>CSSProperties</td>
+      <td>Styles for row and column headers</td>
       <td>`{}`</td>
     </tr>
     <tr>

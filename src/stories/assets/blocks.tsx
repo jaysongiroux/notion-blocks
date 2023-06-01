@@ -14,6 +14,7 @@ import {
 import { paragraphBlocks } from "./paragraphBlocks";
 import { pictureBlocks } from "./pictureBlocks";
 import { quoteBlocks } from "./quoteBlocks";
+import { tableBlocks } from "./tableBlocks";
 import { toggleListBlocks } from "./toggleBlocks";
 import { toggleHeadersBlocks } from "./toggleHeadersBlocks";
 
@@ -35,6 +36,7 @@ export { twoColumnBlocks, threeColumnBlocks } from "./columBlocks";
 export { bookmarkBlocks } from "./bookmarkBlocks";
 export { equationBlocks } from "./equationBlocks";
 export { childPageBlocks } from "./childPageBlocks";
+export {tableBlocks} from './tableBlocks'
 
 export const kitchenSinkBlocks = [
 	headerBlocks[0],
@@ -45,6 +47,7 @@ export const kitchenSinkBlocks = [
 	callOutBlocks[0],
 	pictureBlocks[0],
 	codeBlocks[0],
+	tableBlocks[0],
 	quoteBlocks[0],
 	bookmarkBlocks[0],
 	bulletListBlocks[0],

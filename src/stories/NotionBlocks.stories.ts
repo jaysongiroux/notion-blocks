@@ -18,6 +18,7 @@ import {
   bookmarkBlocks,
   equationBlocks,
   childPageBlocks,
+  tableBlocks
 } from './assets/blocks';
 import { NotionBlocks } from '../components';
 
@@ -140,3 +141,9 @@ export const childPageBlock: Story = {
     blocks: childPageBlocks,
   },
 };
+
+export const tableBlock: Story = {
+  args: {
+    blocks: tableBlocks
+  }
+}

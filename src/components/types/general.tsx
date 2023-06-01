@@ -125,6 +125,9 @@ export interface NotionBlocksProps {
 	bookmarkStyles?: React.CSSProperties;
 	equationStyles?: React.CSSProperties;
 	childPageStyles?: React.CSSProperties;
+	tableStyle?:React.CSSProperties;
+	tableRowStyle?:React.CSSProperties;
+	tableHeaderStyle?:React.CSSProperties;
 }
 
 export interface GeneralBlockProps {
